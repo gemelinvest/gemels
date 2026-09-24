@@ -269,6 +269,7 @@ h3 {
   align-items: center;
   text-decoration: none;
   line-height: 0;
+  margin-inline-start: -1.35rem;
 }
 
 .brand img {
@@ -468,10 +469,9 @@ h3 {
   z-index: -1;
   background: linear-gradient(
     to left,
-    rgba(12, 28, 60, 0.62) 0%,
-    rgba(12, 28, 60, 0.28) 32%,
-    rgba(12, 28, 60, 0.04) 58%,
-    rgba(12, 28, 60, 0) 100%
+    rgba(12, 28, 60, 0.4) 0%,
+    rgba(12, 28, 60, 0.18) 18%,
+    rgba(12, 28, 60, 0) 42%
   );
 }
 
@@ -1204,6 +1204,10 @@ h3 {
 
   .brand img {
     height: 62px;
+  }
+
+  .brand {
+    margin-inline-start: -0.35rem;
   }
 }
 
