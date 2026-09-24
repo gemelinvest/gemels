@@ -18,8 +18,13 @@ function isCurrent(href: string) {
       <img src={withBase("/brand/logo.png")} width="554" height="302" alt="" />
     </a>
 
-    <details class="nav-details">
+    <details class="nav-details" open>
       <summary class="nav-toggle">תפריט</summary>
+      <script is:inline>
+        if (window.matchMedia("(max-width: 1023px)").matches) {
+          document.currentScript.parentElement.removeAttribute("open");
+        }
+      </script>
       <nav class="nav-panel" aria-label="ניווט ראשי">
         <a href={home} aria-current={isCurrent(home) ? "page" : undefined}>דף הבית</a>
         {
@@ -27,7 +32,7 @@ function isCurrent(href: string) {
             <details class="menu-drop">
               <summary class="menu-summary">{group.label}</summary>
               <div class="mega">
-                <p class="mega__note">הסבר קצר לכל תחום. הניסוח הסופי יאושר לפני פרסום.</p>
+                <p class="mega__note">טיוטת הסבר לכל תחום. הניסוח הסופי יאושר לפני פרסום.</p>
                 {group.items.map((item) => (
                   <a class="mega__link" href={item.href}>
                     <span class="mega__title">{item.title}</span>
@@ -63,6 +68,15 @@ function isCurrent(href: string) {
 </header>
 
 <script>
+  const navDetails = document.querySelector(".nav-details");
+  const desktopNav = window.matchMedia("(min-width: 1024px)");
+  const syncNav = () => {
+    if (!(navDetails instanceof HTMLDetailsElement)) return;
+    if (desktopNav.matches) navDetails.open = true;
+    else navDetails.open = false;
+  };
+  desktopNav.addEventListener("change", syncNav);
+
   const panel = document.querySelector(".nav-panel");
   panel?.addEventListener(
     "toggle",

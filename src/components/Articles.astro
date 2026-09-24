@@ -7,14 +7,13 @@ interface Props {
 }
 
 const { asPage = false } = Astro.props;
-const Heading = asPage ? "h1" : "h2";
 ---
 
-<section class="section section--white" id="articles" aria-labelledby="articles-title">
+<section class="section section--white" id="articles" aria-labelledby={asPage ? "page-title" : "articles-title"}>
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">מאמרים ומידע</p>
-      <Heading id="articles-title">מקום לתוכן אורגני</Heading>
+      {asPage ? null : <h2 id="articles-title">מקום לתוכן אורגני</h2>}
       <p class="lede">הכרטיסים הם טיוטות מבנה. הם לא מאמרים רשמיים ואין בהם ייעוץ.</p>
     </div>
     <div class="article-grid">

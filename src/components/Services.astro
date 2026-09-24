@@ -1,5 +1,5 @@
 ---
-import { services, withBase } from "../data/site";
+import { menuGroups, services, withBase } from "../data/site";
 import Icons from "./Icons.astro";
 ---
 
@@ -23,6 +23,23 @@ import Icons from "./Icons.astro";
             <p>{service.summary}</p>
             <span class="placeholder-flag">ממתין לאישור</span>
           </a>
+        ))
+      }
+    </div>
+    <div class="topic-groups">
+      {
+        menuGroups.map((group) => (
+          <section class="topic-card" aria-labelledby={`group-${group.items[0].id}`}>
+            <h3 id={`group-${group.items[0].id}`}>{group.label}</h3>
+            <ul class="topic-list">
+              {group.items.map((item) => (
+                <li id={item.id}>
+                  <h4>{item.title}</h4>
+                  <p>{item.text}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
         ))
       }
     </div>

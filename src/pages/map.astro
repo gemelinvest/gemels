@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { articlePath, articles, legalNav, nav, withBase } from "../data/site";
+import { articlePath, articles, legalNav, menuGroups, nav, withBase } from "../data/site";
 
 const crumbs = [
   { href: withBase("/"), label: "דף הבית" },
@@ -14,12 +14,26 @@ const crumbs = [
   breadcrumbs={crumbs}
 >
   <article class="wrap prose">
-    <h1>מפת אתר</h1>
     <h2>עמודים</h2>
     <ul>
       {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
       {legalNav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
     </ul>
+    <h2>תחומים בתפריט</h2>
+    {
+      menuGroups.map((group) => (
+        <section>
+          <h3>{group.label}</h3>
+          <ul>
+            {group.items.map((item) => (
+              <li>
+                <a href={item.href}>{item.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
     <h2>טיוטות מאמרים</h2>
     <ul>
       {articles.map((article) => <li><a href={articlePath(article.slug)}>{article.title}</a></li>)}
