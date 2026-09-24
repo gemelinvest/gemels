@@ -886,6 +886,22 @@ h3 {
   margin-top: 2rem;
 }
 
+.glossary {
+  display: grid;
+  gap: 0.35rem 1rem;
+  margin: 0;
+}
+
+.glossary dt {
+  margin-top: 1rem;
+  font-weight: 800;
+}
+
+.glossary dd {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
 .site-footer {
   background: var(--ink);
   color: #f4efe7;

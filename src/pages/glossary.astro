@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { glossary, withBase } from "../data/site";
+
+const crumbs = [
+  { href: withBase("/"), label: "דף הבית" },
+  { href: withBase("/glossary/"), label: "מילון מונחים" },
+];
+---
+
+<BaseLayout
+  title="מילון מונחים"
+  description="מילון קצר של גמלס למונחים בפנסיה, בגמל ובביטוח. הגדרות כלליות, לא ייעוץ."
+  breadcrumbs={crumbs}
+>
+  <article class="wrap prose">
+    <p>ההגדרות כאן נכתבו כדי לקרוא דוח או פוליסה בלי מילון זר. הן לא מחליפות תקנון, פוליסה או שיחה.</p>
+    <dl class="glossary">
+      {
+        glossary.map((item) => (
+          <>
+            <dt>{item.term}</dt>
+            <dd>{item.text}</dd>
+          </>
+        ))
+      }
+    </dl>
+  </article>
+</BaseLayout>

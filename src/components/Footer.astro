@@ -1,5 +1,5 @@
 ---
-import { brand, legalNav, nav, phone, withBase } from "../data/site";
+import { brand, email, legalNav, nav, office, phone, withBase } from "../data/site";
 const year = new Date().getFullYear();
 ---
 
@@ -10,7 +10,11 @@ const year = new Date().getFullYear();
         <img src={withBase("/brand/logo.png")} width="554" height="302" alt="" />
       </a>
       <p class="footer-note">שירות לקוחות: <a href={phone.href}>{phone.display}</a></p>
-      <p class="footer-note">הטקסטים באתר זמניים עד לאישור הניסוח הסופי.</p>
+      <p class="footer-note">{office.street}, {office.city}</p>
+      <p class="footer-note">
+        <a href={email.href}>{email.display}</a>
+        {email.temporary ? " (כתובת זמנית)" : ""}
+      </p>
     </div>
     <nav aria-label="ניווט בתחתית">
       <h2>ניווט</h2>
@@ -27,8 +31,10 @@ const year = new Date().getFullYear();
     <section aria-labelledby="regulatory-heading">
       <h2 id="regulatory-heading">מידע רגולטורי</h2>
       <div class="regulatory">
-        <p><strong>PLACEHOLDER</strong></p>
-        <p>אין כאן פרטי רישיון, הסדרה או שמות גופים. הם יתווספו רק אחרי שתספקו אותם.</p>
+        <p><strong>{office.name}</strong></p>
+        <p>ח.פ. {office.hp}</p>
+        <p>{office.street}, {office.city}</p>
+        <p>מספר רישיון לא נמסר עדיין, ולכן הוא לא מופיע כאן.</p>
       </div>
     </section>
   </div>

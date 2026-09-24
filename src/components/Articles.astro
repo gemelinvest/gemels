@@ -13,8 +13,8 @@ const { asPage = false } = Astro.props;
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">מאמרים ומידע</p>
-      {asPage ? null : <h2 id="articles-title">מקום לתוכן אורגני</h2>}
-      <p class="lede">הכרטיסים הם טיוטות מבנה. הם לא מאמרים רשמיים ואין בהם ייעוץ.</p>
+      {asPage ? null : <h2 id="articles-title">לקרוא לפני השיחה</h2>}
+      <p class="lede">הסברים קצרים על פנסיה, גמל וביטוח. זה מידע כללי, לא ייעוץ אישי.</p>
     </div>
     <div class="article-grid">
       {
@@ -29,7 +29,6 @@ const { asPage = false } = Astro.props;
               loading="lazy"
             />
             <div class="article-card__body">
-              <span class="placeholder-flag">טיוטה</span>
               <time datetime={article.date}>{article.dateLabel}</time>
               <h3>{article.title}</h3>
               <p>{article.excerpt}</p>

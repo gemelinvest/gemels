@@ -1,5 +1,5 @@
 ---
-import { contactTopics, phone, withBase } from "../data/site";
+import { contactTopics, email, office, phone, withBase } from "../data/site";
 ---
 
 <section class="section" id="contact" aria-labelledby="contact-title">
@@ -8,8 +8,9 @@ import { contactTopics, phone, withBase } from "../data/site";
       <p class="eyebrow">צור קשר</p>
       <h2 id="contact-title">השאירו פרטים</h2>
       <p class="lede">
-        הטופס בודק את השדות אצלכם במכשיר. הוא עדיין לא שולח פנייה לשרת. אפשר גם להתקשר עכשיו אל
-        <a href={phone.href}>{phone.display}</a>.
+        {office.street}, {office.city}. אפשר להתקשר אל <a href={phone.href}>{phone.display}</a>.
+        המייל <a href={email.href}>{email.display}</a> זמני עד לעדכון.
+        הטופס בודק את השדות במכשיר, ועדיין לא שולח את הפנייה לשרת.
       </p>
     </div>
     <form class="form" id="contact-form" novalidate>

@@ -25,11 +25,13 @@ const home = await readFile(join(dist, "index.html"), "utf8");
 assert(files.length >= 8, "expected several html pages");
 assert(home.includes('lang="he"'), "home lang");
 assert(home.includes('dir="rtl"'), "home dir");
-assert(home.includes("tel:*0000"), "home tel link");
+assert(home.includes("tel:*6727"), "home tel link");
 assert(home.includes('rel="canonical"'), "canonical");
 assert(home.includes("og:title"), "open graph");
 assert(home.includes("application/ld+json"), "structured data");
-assert(home.includes("גמל INS"), "brand name");
+assert(home.includes("גמלס"), "brand name");
+assert(home.includes("517292975"), "company number");
+assert(!home.includes("*0000"), "old phone removed");
 assert(!/\d+\s*שנות ניסיון/.test(home), "no invented tenure");
 assert(home.includes("דילוג לתוכן"), "skip link");
 
@@ -37,7 +39,8 @@ for (const file of files) {
   const html = await readFile(file, "utf8");
   assert(html.includes('lang="he"'), `${file} lang`);
   assert(html.includes('dir="rtl"'), `${file} dir`);
-  assert(html.includes("tel:*0000"), `${file} phone`);
+  assert(html.includes("tel:*6727"), `${file} phone`);
+  assert(!html.includes("*0000"), `${file} old phone`);
   assert(!html.includes("<img") || html.includes("alt="), `${file} alt`);
 }
 

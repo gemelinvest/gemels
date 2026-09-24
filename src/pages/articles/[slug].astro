@@ -20,7 +20,6 @@ const crumbs = [
 
 <BaseLayout title={article.title} description={article.excerpt} breadcrumbs={crumbs}>
   <article class="wrap prose">
-    <p class="placeholder-flag">טיוטה, לא תוכן רשמי</p>
     <p><time datetime={article.date}>{article.dateLabel}</time></p>
     <Picture
       src={article.image}
@@ -29,11 +28,8 @@ const crumbs = [
       widths={[640, 960, 1200]}
       sizes="(min-width: 800px) 720px, 100vw"
     />
-    <p>{article.excerpt}</p>
-    <p>
-      העמוד הזה שומר מקום במבנה האתר. אין כאן הסבר על מוצר, המלצה, או מידע שאפשר להסתמך עליו.
-      המאמר יוחלף כשיהיה טקסט מאושר.
-    </p>
+    {article.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    <p>הכתוב כאן הוא הסבר כללי של גמלס. הוא אינו ייעוץ אישי, אינו הצעה, ואינו הבטחת תשואה.</p>
     <p><a href={withBase("/articles/")}>חזרה למאמרים</a></p>
   </article>
 </BaseLayout>
