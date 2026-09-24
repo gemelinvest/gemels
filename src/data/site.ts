@@ -29,6 +29,76 @@ export const nav = [
   { href: withBase("/#contact"), label: "צור קשר" },
 ] as const;
 
+export type MenuLink = { href: string; label: string };
+
+export type MenuGroup = {
+  label: string;
+  items: { title: string; text: string; href: string }[];
+};
+
+export const menuGroups: MenuGroup[] = [
+  {
+    label: "ביטוחים",
+    items: [
+      {
+        title: "ביטוח דירה",
+        text: "כיסוי למבנה ולתכולה, לפי סוג הבית ומה שכבר מבוטח.",
+        href: withBase("/#services"),
+      },
+      {
+        title: "ביטוח משכנתא",
+        text: "ביטוח חיים ומבנה שלרוב נדרש לצד הלוואת המשכנתא.",
+        href: withBase("/#services"),
+      },
+      {
+        title: "ביטוח בריאות",
+        text: "שכבה משלימה לסל הציבורי, אחרי בדיקה של מה שכבר קיים.",
+        href: withBase("/#services"),
+      },
+      {
+        title: "ביטוח חיים",
+        text: "הגנה כלכלית למשפחה אם המבוטח אינו יכול עוד לפרנס.",
+        href: withBase("/#services"),
+      },
+      {
+        title: "נסיעות לחו\"ל",
+        text: "כיסוי רפואי וכבודה לתקופת הנסיעה, לפי היעד והגיל.",
+        href: withBase("/#services"),
+      },
+      {
+        title: "אובדן כושר עבודה",
+        text: "המשך הכנסה אם אי אפשר להמשיך לעבוד, לפי תנאי הפוליסה.",
+        href: withBase("/#services"),
+      },
+    ],
+  },
+  {
+    label: "פנסיה וחיסכון",
+    items: [
+      {
+        title: "קרן פנסיה",
+        text: "חיסכון לגיל פרישה, עם כיסויים שנלווים למסלול שנבחר.",
+        href: withBase("/#services"),
+      },
+      {
+        title: "קופת גמל",
+        text: "חיסכון לטווח ארוך, במסלול השקעה שמתאים לגיל ולמטרה.",
+        href: withBase("/#services"),
+      },
+      {
+        title: "קרן השתלמות",
+        text: "חיסכון לטווח בינוני, לשכירים ולעצמאים, לפי תקרות המס.",
+        href: withBase("/#services"),
+      },
+      {
+        title: "ביטוח מנהלים",
+        text: "מסלול פנסיוני ותיק. כדאי להשוות אותו מול קרן פנסיה.",
+        href: withBase("/#services"),
+      },
+    ],
+  },
+];
+
 export const legalNav = [
   { href: withBase("/privacy/"), label: "מדיניות פרטיות" },
   { href: withBase("/accessibility/"), label: "הצהרת נגישות" },

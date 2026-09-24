@@ -1,8 +1,9 @@
 ---
-import { brand, nav, phone, withBase } from "../data/site";
+import { brand, menuGroups, nav, phone, withBase } from "../data/site";
 
 const path = Astro.url.pathname;
 const home = withBase("/");
+const plainLinks = nav.filter((item) => item.label !== "שירותים");
 
 function isCurrent(href: string) {
   if (href === home) return path === "/" || path === home || `${path}/` === home;
@@ -13,19 +14,38 @@ function isCurrent(href: string) {
 
 <header class="site-header">
   <div class="wrap site-header__bar">
-    <a class="brand" href={withBase("/")} aria-label={`${brand.name}, דף הבית`}>
+    <a class="brand" href={home} aria-label={`${brand.name}, דף הבית`}>
       <img src={withBase("/brand/logo.png")} width="554" height="302" alt="" />
     </a>
 
     <details class="nav-details">
       <summary class="nav-toggle">תפריט</summary>
       <nav class="nav-panel" aria-label="ניווט ראשי">
+        <a href={home} aria-current={isCurrent(home) ? "page" : undefined}>דף הבית</a>
         {
-          nav.map((item) => (
-            <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
-              {item.label}
-            </a>
+          menuGroups.map((group) => (
+            <details class="menu-drop">
+              <summary class="menu-summary">{group.label}</summary>
+              <div class="mega">
+                <p class="mega__note">הסבר קצר לכל תחום. הניסוח הסופי יאושר לפני פרסום.</p>
+                {group.items.map((item) => (
+                  <a class="mega__link" href={item.href}>
+                    <span class="mega__title">{item.title}</span>
+                    <span class="mega__text">{item.text}</span>
+                  </a>
+                ))}
+              </div>
+            </details>
           ))
+        }
+        {
+          plainLinks
+            .filter((item) => item.href !== home)
+            .map((item) => (
+              <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+                {item.label}
+              </a>
+            ))
         }
       </nav>
     </details>
@@ -41,3 +61,18 @@ function isCurrent(href: string) {
     </div>
   </div>
 </header>
+
+<script>
+  const panel = document.querySelector(".nav-panel");
+  panel?.addEventListener(
+    "toggle",
+    (event) => {
+      const current = event.target;
+      if (!(current instanceof HTMLDetailsElement) || !current.open || !current.classList.contains("menu-drop")) return;
+      panel.querySelectorAll(".menu-drop[open]").forEach((node) => {
+        if (node !== current) node.removeAttribute("open");
+      });
+    },
+    true,
+  );
+</script>
