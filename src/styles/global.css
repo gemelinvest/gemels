@@ -452,11 +452,11 @@ h3 {
 
 .hero__media img {
   position: absolute;
-  inset-block: 0;
-  left: -72%;
-  width: 148%;
+  inset: 0;
+  width: 132%;
   max-width: none;
   height: 100%;
+  left: -16%;
   object-fit: cover;
   object-position: center center;
 }
@@ -466,8 +466,13 @@ h3 {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(to left, rgba(12, 28, 60, 0.82) 0%, rgba(12, 28, 60, 0.55) 34%, rgba(12, 28, 60, 0.12) 62%, rgba(12, 28, 60, 0.05) 100%);
+  background: linear-gradient(
+    to left,
+    rgba(12, 28, 60, 0.62) 0%,
+    rgba(12, 28, 60, 0.28) 32%,
+    rgba(12, 28, 60, 0.04) 58%,
+    rgba(12, 28, 60, 0) 100%
+  );
 }
 
 .hero__copy {
@@ -1178,8 +1183,8 @@ h3 {
   }
 
   .hero__media img {
-    left: -48%;
-    width: 175%;
+    left: 0;
+    width: 100%;
   }
 
   .hero::after {
