@@ -1,5 +1,5 @@
 ---
-import { contactTopics, phone } from "../data/site";
+import { contactTopics, phone, withBase } from "../data/site";
 ---
 
 <section class="section" id="contact" aria-labelledby="contact-title">
@@ -48,7 +48,7 @@ import { contactTopics, phone } from "../data/site";
           <input id="privacy" name="privacy" type="checkbox" required />
           <label for="privacy">קראתי את מדיניות הפרטיות ואני מאשר/ת את אופן הטיפול בפנייה, כשהיא תחובר.</label>
         </div>
-        <p><a href="/privacy/">למדיניות הפרטיות</a></p>
+        <p><a href={withBase("/privacy/")}>למדיניות הפרטיות</a></p>
         <p class="field__error" id="privacy-error"></p>
       </div>
       <p class="form-status" id="form-status" data-state="idle" role="status" aria-live="polite" hidden></p>

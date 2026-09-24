@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { brand, phone } from "../data/site";
+import { brand, phone, withBase } from "../data/site";
 
 interface Crumb {
   href: string;
@@ -16,18 +16,19 @@ interface Props {
 }
 
 const { title, description, breadcrumbs = [] } = Astro.props;
+const homeUrl = new URL(withBase("/"), Astro.site);
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const fullTitle = title === brand.name ? title : `${title} | ${brand.name}`;
-const ogImage = new URL("/og.jpg", Astro.site);
+const ogImage = new URL(withBase("/og.jpg"), Astro.site);
 
 const graph: Record<string, unknown>[] = [
   {
     "@type": "Organization",
-    "@id": new URL("/#organization", Astro.site).href,
+    "@id": new URL(withBase("/#organization"), Astro.site).href,
     name: brand.name,
     alternateName: brand.latinName,
-    url: Astro.site?.href,
-    logo: new URL("/brand/logo.png", Astro.site).href,
+    url: homeUrl.href,
+    logo: new URL(withBase("/brand/logo.png"), Astro.site).href,
     telephone: phone.display,
     contactPoint: {
       "@type": "ContactPoint",
@@ -38,11 +39,11 @@ const graph: Record<string, unknown>[] = [
   },
   {
     "@type": "WebSite",
-    "@id": new URL("/#website", Astro.site).href,
+    "@id": new URL(withBase("/#website"), Astro.site).href,
     name: brand.name,
-    url: Astro.site?.href,
+    url: homeUrl.href,
     inLanguage: "he",
-    publisher: { "@id": new URL("/#organization", Astro.site).href },
+    publisher: { "@id": new URL(withBase("/#organization"), Astro.site).href },
   },
 ];
 
@@ -85,7 +86,7 @@ const structuredData = {
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage.href} />
-    <link rel="icon" href="/brand/favicon.png" type="image/png" />
+    <link rel="icon" href={withBase("/brand/favicon.png")} type="image/png" />
     {
       import.meta.env.PUBLIC_GSC_VERIFICATION && (
         <meta name="google-site-verification" content={import.meta.env.PUBLIC_GSC_VERIFICATION} />

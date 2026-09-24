@@ -1,13 +1,13 @@
 ---
-import { brand, legalNav, nav, phone } from "../data/site";
+import { brand, legalNav, nav, phone, withBase } from "../data/site";
 const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <a class="footer-logo" href="/" aria-label={`${brand.name}, דף הבית`}>
-        <img src="/brand/logo.png" width="554" height="302" alt="" />
+      <a class="footer-logo" href={withBase("/")} aria-label={`${brand.name}, דף הבית`}>
+        <img src={withBase("/brand/logo.png")} width="554" height="302" alt="" />
       </a>
       <p class="footer-note">שירות לקוחות: <a href={phone.href}>{phone.display}</a></p>
       <p class="footer-note">הטקסטים באתר זמניים עד לאישור הניסוח הסופי.</p>

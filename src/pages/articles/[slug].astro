@@ -1,7 +1,7 @@
 ---
 import { Picture } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { articlePath, articles } from "../../data/site";
+import { articlePath, articles, withBase } from "../../data/site";
 
 export function getStaticPaths() {
   return articles.map((article) => ({
@@ -12,8 +12,8 @@ export function getStaticPaths() {
 
 const { article } = Astro.props;
 const crumbs = [
-  { href: "/", label: "דף הבית" },
-  { href: "/articles/", label: "מאמרים" },
+  { href: withBase("/"), label: "דף הבית" },
+  { href: withBase("/articles/"), label: "מאמרים" },
   { href: articlePath(article.slug), label: article.title },
 ];
 ---
@@ -35,6 +35,6 @@ const crumbs = [
       העמוד הזה שומר מקום במבנה האתר. אין כאן הסבר על מוצר, המלצה, או מידע שאפשר להסתמך עליו.
       המאמר יוחלף כשיהיה טקסט מאושר.
     </p>
-    <p><a href="/articles/">חזרה למאמרים</a></p>
+    <p><a href={withBase("/articles/")}>חזרה למאמרים</a></p>
   </article>
 </BaseLayout>

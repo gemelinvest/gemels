@@ -1,9 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../data/site";
 
 const crumbs = [
-  { href: "/", label: "דף הבית" },
-  { href: "/privacy/", label: "מדיניות פרטיות" },
+  { href: withBase("/"), label: "דף הבית" },
+  { href: withBase("/privacy/"), label: "מדיניות פרטיות" },
 ];
 ---
 

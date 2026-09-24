@@ -1,5 +1,5 @@
 ---
-import { services } from "../data/site";
+import { services, withBase } from "../data/site";
 import Icons from "./Icons.astro";
 ---
 
@@ -15,7 +15,7 @@ import Icons from "./Icons.astro";
     <div class="service-grid">
       {
         services.map((service) => (
-          <a class="card card--link" href="/#contact">
+          <a class="card card--link" href={withBase("/#contact")}>
             <span class="icon-badge">
               <Icons name={service.icon} />
             </span>

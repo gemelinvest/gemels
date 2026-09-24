@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { articlePath, articles, legalNav, nav } from "../data/site";
+import { articlePath, articles, legalNav, nav, withBase } from "../data/site";
 
 const crumbs = [
-  { href: "/", label: "דף הבית" },
-  { href: "/map/", label: "מפת אתר" },
+  { href: withBase("/"), label: "דף הבית" },
+  { href: withBase("/map/"), label: "מפת אתר" },
 ];
 ---
 
@@ -24,6 +24,6 @@ const crumbs = [
     <ul>
       {articles.map((article) => <li><a href={articlePath(article.slug)}>{article.title}</a></li>)}
     </ul>
-    <p><a href="/sitemap.xml">sitemap.xml</a></p>
+    <p><a href={withBase("/sitemap-index.xml")}>sitemap.xml</a></p>
   </article>
 </BaseLayout>

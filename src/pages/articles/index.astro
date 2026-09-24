@@ -1,10 +1,11 @@
 ---
 import Articles from "../../components/Articles.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { withBase } from "../../data/site";
 
 const crumbs = [
-  { href: "/", label: "דף הבית" },
-  { href: "/articles/", label: "מאמרים" },
+  { href: withBase("/"), label: "דף הבית" },
+  { href: withBase("/articles/"), label: "מאמרים" },
 ];
 ---
 

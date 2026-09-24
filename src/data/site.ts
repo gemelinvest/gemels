@@ -6,6 +6,11 @@ import articleTable from "../assets/article-quiet-table.png";
 import articleBalcony from "../assets/article-balcony-plants.png";
 import articleTea from "../assets/article-hands-tea.png";
 
+export function withBase(path: string) {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  return `${base}${path}`;
+}
+
 export const phone = {
   display: "*0000",
   href: "tel:*0000",
@@ -17,18 +22,18 @@ export const brand = {
 } as const;
 
 export const nav = [
-  { href: "/", label: "דף הבית" },
-  { href: "/#about", label: "אודות" },
-  { href: "/#services", label: "שירותים" },
-  { href: "/articles/", label: "מאמרים" },
-  { href: "/#contact", label: "צור קשר" },
+  { href: withBase("/"), label: "דף הבית" },
+  { href: withBase("/#about"), label: "אודות" },
+  { href: withBase("/#services"), label: "שירותים" },
+  { href: withBase("/articles/"), label: "מאמרים" },
+  { href: withBase("/#contact"), label: "צור קשר" },
 ] as const;
 
 export const legalNav = [
-  { href: "/privacy/", label: "מדיניות פרטיות" },
-  { href: "/accessibility/", label: "הצהרת נגישות" },
-  { href: "/terms/", label: "תנאי שימוש" },
-  { href: "/map/", label: "מפת אתר" },
+  { href: withBase("/privacy/"), label: "מדיניות פרטיות" },
+  { href: withBase("/accessibility/"), label: "הצהרת נגישות" },
+  { href: withBase("/terms/"), label: "תנאי שימוש" },
+  { href: withBase("/map/"), label: "מפת אתר" },
 ] as const;
 
 export type ServiceIcon =
@@ -94,8 +99,8 @@ export const hero = {
   eyebrow: "גמל INS",
   title: "העתיד שלך, בידיים טובות",
   subtitle: "ליווי מקצועי ופתרונות מותאמים לך ולמשפחה שלך",
-  primaryCta: { href: "/#contact", label: "צור קשר" },
-  secondaryCta: { href: "/#services", label: "לעוד מידע" },
+  primaryCta: { href: withBase("/#contact"), label: "צור קשר" },
+  secondaryCta: { href: withBase("/#services"), label: "לעוד מידע" },
   image: heroImage,
   imageAlt: "משפחה צעירה, הורים ושני ילדים, יושבים יחד על ספה בסלון מואר",
 };
@@ -108,7 +113,7 @@ export const about = {
     "גמל INS הוא השם שמופיע באתר הזה. כאן ייכנס הסיפור של החברה, הגישה שלה, והדרך שבה היא יושבת מול משפחות.",
     "בעמוד אין נתונים על שנות ניסיון, מספר לקוחות, רישיונות, פרסים או גופים שאיתם עובדים. הפרטים האלה יתווספו רק אחרי שתספקו אותם.",
   ],
-  cta: { href: "/#contact", label: "דברו איתנו" },
+  cta: { href: withBase("/#contact"), label: "דברו איתנו" },
   image: aboutImage,
   imageAlt: "הורה וילד עומדים ליד חלון בבית מואר",
 };
@@ -117,7 +122,7 @@ export const family = {
   eyebrow: "משפחה ועתיד",
   title: "ביטחון שמתחיל בבית",
   text: "החלטות על חיסכון וביטוח נוגעות לאנשים שחיים איתנו. כשהניסוח הסופי יהיה מוכן, הוא יישב כאן לצד התמונה.",
-  cta: { href: "/#contact", label: "צור קשר" },
+  cta: { href: withBase("/#contact"), label: "צור קשר" },
   image: familyImage,
   imageAlt: "משפחה צעירה יושבת סביב שולחן אוכל במטבח מואר",
 };
@@ -212,5 +217,5 @@ export const ctas = {
 };
 
 export function articlePath(slug: string) {
-  return `/articles/${slug}/`;
+  return withBase(`/articles/${slug}/`);
 }
