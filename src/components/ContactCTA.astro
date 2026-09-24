@@ -1,0 +1,26 @@
+---
+import { phone } from "../data/site";
+
+interface Props {
+  id: string;
+  eyebrow: string;
+  title: string;
+  text: string;
+}
+
+const { id, eyebrow, title, text } = Astro.props;
+---
+
+<section class="section cta-band" aria-labelledby={id}>
+  <div class="wrap cta-band__inner">
+    <div>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2 id={id}>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="cta-band__actions">
+      <a class="btn btn--light" href="/#contact">צור קשר</a>
+      <a class="btn btn--line" href={phone.href}>התקשרו עכשיו {phone.display}</a>
+    </div>
+  </div>
+</section>

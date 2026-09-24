@@ -1,0 +1,43 @@
+---
+import { brand, nav, phone } from "../data/site";
+
+const path = Astro.url.pathname;
+
+function isCurrent(href: string) {
+  if (href === "/") return path === "/";
+  if (href.startsWith("/#")) return false;
+  return path === href || path.startsWith(href);
+}
+---
+
+<header class="site-header">
+  <div class="wrap site-header__bar">
+    <a class="brand" href="/" aria-label={`${brand.name}, דף הבית`}>
+      <span>{brand.name.split(" ")[0]}</span>
+      <span class="brand__ins">INS</span>
+    </a>
+
+    <details class="nav-details">
+      <summary class="nav-toggle">תפריט</summary>
+      <nav class="nav-panel" aria-label="ניווט ראשי">
+        {
+          nav.map((item) => (
+            <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </details>
+
+    <div class="header-actions">
+      <a class="phone-link phone-link--text" href={phone.href}>{phone.display}</a>
+      <a class="phone-link phone-link--icon" href={phone.href} aria-label={`התקשרות ${phone.display}`}>
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M7 3.8h3.2l1.2 3-2 1.2a12.5 12.5 0 0 0 6.6 6.6l1.2-2 3 1.2V17a2 2 0 0 1-2.2 2A15.2 15.2 0 0 1 5 6a2 2 0 0 1 2-2.2Z" />
+        </svg>
+      </a>
+      <a class="btn btn--primary" href="/#contact">צור קשר</a>
+    </div>
+  </div>
+</header>

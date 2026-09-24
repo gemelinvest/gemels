@@ -1,0 +1,44 @@
+---
+import { Picture } from "astro:assets";
+import { articlePath, articles } from "../data/site";
+
+interface Props {
+  asPage?: boolean;
+}
+
+const { asPage = false } = Astro.props;
+const Heading = asPage ? "h1" : "h2";
+---
+
+<section class="section section--white" id="articles" aria-labelledby="articles-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">מאמרים ומידע</p>
+      <Heading id="articles-title">מקום לתוכן אורגני</Heading>
+      <p class="lede">הכרטיסים הם טיוטות מבנה. הם לא מאמרים רשמיים ואין בהם ייעוץ.</p>
+    </div>
+    <div class="article-grid">
+      {
+        articles.map((article) => (
+          <a class="article-card" href={articlePath(article.slug)}>
+            <Picture
+              src={article.image}
+              alt={article.imageAlt}
+              formats={["avif", "webp"]}
+              widths={[360, 640, 900]}
+              sizes="(min-width: 1024px) 30vw, (min-width: 700px) 50vw, 100vw"
+              loading="lazy"
+            />
+            <div class="article-card__body">
+              <span class="placeholder-flag">טיוטה</span>
+              <time datetime={article.date}>{article.dateLabel}</time>
+              <h3>{article.title}</h3>
+              <p>{article.excerpt}</p>
+              <span class="article-card__more">קרא עוד</span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

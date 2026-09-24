@@ -1,0 +1,36 @@
+---
+import { brand, legalNav, nav, phone } from "../data/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">{brand.name}</p>
+      <p class="footer-note">שירות לקוחות: <a href={phone.href}>{phone.display}</a></p>
+      <p class="footer-note">הטקסטים באתר זמניים עד לאישור הניסוח הסופי.</p>
+    </div>
+    <nav aria-label="ניווט בתחתית">
+      <h2>ניווט</h2>
+      <ul>
+        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </nav>
+    <nav aria-label="מידע">
+      <h2>מידע</h2>
+      <ul>
+        {legalNav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </nav>
+    <section aria-labelledby="regulatory-heading">
+      <h2 id="regulatory-heading">מידע רגולטורי</h2>
+      <div class="regulatory">
+        <p><strong>PLACEHOLDER</strong></p>
+        <p>אין כאן פרטי רישיון, הסדרה או שמות גופים. הם יתווספו רק אחרי שתספקו אותם.</p>
+      </div>
+    </section>
+  </div>
+  <div class="wrap footer-base">
+    <p>© {year} {brand.name}</p>
+  </div>
+</footer>

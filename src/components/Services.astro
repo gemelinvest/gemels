@@ -1,0 +1,30 @@
+---
+import { services } from "../data/site";
+import Icons from "./Icons.astro";
+---
+
+<section class="section section--white" id="services" aria-labelledby="services-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">שירותים</p>
+      <h2 id="services-title">תחומים שאפשר להחליף בקלות</h2>
+      <p class="lede">
+        הרשימה כאן היא שלד. כל כרטיס מסומן כתוכן שממתין לאישור, כולל תחומים שאולי אינם רלוונטיים לגמל INS.
+      </p>
+    </div>
+    <div class="service-grid">
+      {
+        services.map((service) => (
+          <a class="card card--link" href="/#contact">
+            <span class="icon-badge">
+              <Icons name={service.icon} />
+            </span>
+            <h3>{service.title}</h3>
+            <p>{service.summary}</p>
+            <span class="placeholder-flag">ממתין לאישור</span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

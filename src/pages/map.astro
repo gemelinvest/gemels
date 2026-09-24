@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { articlePath, articles, legalNav, nav } from "../data/site";
+
+const crumbs = [
+  { href: "/", label: "דף הבית" },
+  { href: "/map/", label: "מפת אתר" },
+];
+---
+
+<BaseLayout
+  title="מפת אתר"
+  description="מפת העמודים של אתר גמל INS."
+  breadcrumbs={crumbs}
+>
+  <article class="wrap prose">
+    <h1>מפת אתר</h1>
+    <h2>עמודים</h2>
+    <ul>
+      {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      {legalNav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+    </ul>
+    <h2>טיוטות מאמרים</h2>
+    <ul>
+      {articles.map((article) => <li><a href={articlePath(article.slug)}>{article.title}</a></li>)}
+    </ul>
+    <p><a href="/sitemap.xml">sitemap.xml</a></p>
+  </article>
+</BaseLayout>

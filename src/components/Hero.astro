@@ -1,0 +1,34 @@
+---
+import { Picture } from "astro:assets";
+import { hero, phone } from "../data/site";
+---
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">{hero.eyebrow}</p>
+      <h1 id="hero-title">{hero.title}</h1>
+      <p class="lede">{hero.subtitle}</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
+        <a class="btn btn--ghost" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
+      </div>
+      <p class="hero__phone">
+        או התקשרו לשירות לקוחות:
+        <a href={phone.href}>{phone.display}</a>
+      </p>
+    </div>
+    <figure class="hero__frame">
+      <Picture
+        src={hero.image}
+        alt={hero.imageAlt}
+        formats={["avif", "webp"]}
+        widths={[480, 768, 1024, 1400]}
+        sizes="(min-width: 1024px) 54vw, 100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <figcaption class="hero__caption">צילום אווירה לבית משפחתי. אין טקסט בתוך התמונה.</figcaption>
+    </figure>
+  </div>
+</section>

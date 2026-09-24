@@ -1,0 +1,27 @@
+---
+import About from "../components/About.astro";
+import Articles from "../components/Articles.astro";
+import Benefits from "../components/Benefits.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import ContactForm from "../components/ContactForm.astro";
+import FamilySection from "../components/FamilySection.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { brand, ctas } from "../data/site";
+---
+
+<BaseLayout
+  title={brand.name}
+  description="גמל INS. ליווי מקצועי ופתרונות מותאמים למשפחה. האתר בשלבי תוכן, עם דרך ליצור קשר."
+>
+  <Hero />
+  <Services />
+  <About />
+  <Benefits />
+  <FamilySection />
+  <Articles />
+  <ContactCTA id="cta-fit" eyebrow={ctas.primary.eyebrow} title={ctas.primary.title} text={ctas.primary.text} />
+  <ContactForm />
+  <ContactCTA id="cta-close" eyebrow={ctas.closing.eyebrow} title={ctas.closing.title} text={ctas.closing.text} />
+</BaseLayout>

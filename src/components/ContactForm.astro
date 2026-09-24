@@ -1,0 +1,136 @@
+---
+import { contactTopics, phone } from "../data/site";
+---
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">צור קשר</p>
+      <h2 id="contact-title">השאירו פרטים</h2>
+      <p class="lede">
+        הטופס בודק את השדות אצלכם במכשיר. הוא עדיין לא שולח פנייה לשרת. אפשר גם להתקשר עכשיו אל
+        <a href={phone.href}>{phone.display}</a>.
+      </p>
+    </div>
+    <form class="form" id="contact-form" novalidate>
+      <p class="form-status" id="form-status" data-state="idle" role="status" aria-live="polite" hidden></p>
+      <div class="form__row">
+        <div class="field">
+          <label for="full-name">שם מלא</label>
+          <input id="full-name" name="fullName" type="text" autocomplete="name" required />
+          <p class="field__error" id="full-name-error"></p>
+        </div>
+        <div class="field">
+          <label for="phone">טלפון</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+          <p class="field__error" id="phone-error"></p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">דוא"ל</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+        <p class="field__error" id="email-error"></p>
+      </div>
+      <div class="field">
+        <label for="topic">נושא הפנייה</label>
+        <select id="topic" name="topic" required>
+          <option value="">בחרו נושא</option>
+          {contactTopics.map((topic) => <option value={topic}>{topic}</option>)}
+        </select>
+        <p class="field__error" id="topic-error"></p>
+      </div>
+      <div class="field">
+        <label for="message">הודעה</label>
+        <textarea id="message" name="message" required></textarea>
+        <p class="field__error" id="message-error"></p>
+      </div>
+      <div class="field">
+        <div class="check">
+          <input id="privacy" name="privacy" type="checkbox" required />
+          <label for="privacy">קראתי את מדיניות הפרטיות ואני מאשר/ת את אופן הטיפול בפנייה, כשהיא תחובר.</label>
+        </div>
+        <p><a href="/privacy/">למדיניות הפרטיות</a></p>
+        <p class="field__error" id="privacy-error"></p>
+      </div>
+      <button class="btn btn--primary" type="submit">שליחת הפנייה</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>("#contact-form");
+  const status = document.querySelector<HTMLElement>("#form-status");
+
+  const rules: Record<string, { message: string; valid: (value: string, checked?: boolean) => boolean }> = {
+    fullName: {
+      message: "נא למלא שם מלא.",
+      valid: (value) => value.trim().length >= 2,
+    },
+    phone: {
+      message: "נא להזין מספר טלפון עם לפחות 9 ספרות.",
+      valid: (value) => value.replace(/\D/g, "").length >= 9,
+    },
+    email: {
+      message: "נא להזין כתובת דוא\"ל תקינה.",
+      valid: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()),
+    },
+    topic: {
+      message: "נא לבחור נושא לפנייה.",
+      valid: (value) => value.trim().length > 0,
+    },
+    message: {
+      message: "נא לכתוב הודעה של כמה מילים.",
+      valid: (value) => value.trim().length >= 8,
+    },
+    privacy: {
+      message: "כדי להמשיך צריך לאשר את מדיניות הפרטיות.",
+      valid: (_value, checked) => checked === true,
+    },
+  };
+
+  function setError(name: string, message: string) {
+    const field = form?.elements.namedItem(name);
+    const input = field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement || field instanceof HTMLSelectElement
+      ? field
+      : null;
+    const error = document.getElementById(`${input?.id ?? name}-error`);
+    if (input) {
+      input.setAttribute("aria-invalid", message ? "true" : "false");
+      input.setAttribute("aria-describedby", error?.id ?? "");
+    }
+    if (error) error.textContent = message;
+  }
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!form || !status) return;
+
+    let firstInvalid: HTMLElement | null = null;
+    const data = new FormData(form);
+    let ok = true;
+
+    for (const [name, rule] of Object.entries(rules)) {
+      const raw = data.get(name);
+      const value = typeof raw === "string" ? raw : "";
+      const checked = name === "privacy" ? data.get("privacy") === "on" : undefined;
+      const valid = rule.valid(value, checked);
+      setError(name, valid ? "" : rule.message);
+      if (!valid) {
+        ok = false;
+        const field = form.elements.namedItem(name);
+        if (!firstInvalid && field instanceof HTMLElement) firstInvalid = field;
+      }
+    }
+
+    status.hidden = false;
+    if (!ok) {
+      status.dataset.state = "error";
+      status.textContent = "יש שדות שצריך לתקן לפני שאפשר להמשיך.";
+      firstInvalid?.focus();
+      return;
+    }
+
+    status.dataset.state = "ready";
+    status.textContent = "הטופס מולא כראוי. בשלב זה אין חיבור לשרת, והפנייה לא נשלחה.";
+  });
+</script>

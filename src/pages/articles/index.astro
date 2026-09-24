@@ -1,0 +1,17 @@
+---
+import Articles from "../../components/Articles.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const crumbs = [
+  { href: "/", label: "דף הבית" },
+  { href: "/articles/", label: "מאמרים" },
+];
+---
+
+<BaseLayout
+  title="מאמרים ומידע"
+  description="אזור מאמרים של גמל INS. הכרטיסים הם טיוטות מקום לתוכן עתידי, לא מידע רשמי."
+  breadcrumbs={crumbs}
+>
+  <Articles asPage />
+</BaseLayout>

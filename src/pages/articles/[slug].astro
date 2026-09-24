@@ -1,0 +1,40 @@
+---
+import { Picture } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { articlePath, articles } from "../../data/site";
+
+export function getStaticPaths() {
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const crumbs = [
+  { href: "/", label: "דף הבית" },
+  { href: "/articles/", label: "מאמרים" },
+  { href: articlePath(article.slug), label: article.title },
+];
+---
+
+<BaseLayout title={article.title} description={article.excerpt} breadcrumbs={crumbs}>
+  <article class="wrap prose">
+    <p class="placeholder-flag">טיוטה, לא תוכן רשמי</p>
+    <h1>{article.title}</h1>
+    <p><time datetime={article.date}>{article.dateLabel}</time></p>
+    <Picture
+      src={article.image}
+      alt={article.imageAlt}
+      formats={["avif", "webp"]}
+      widths={[640, 960, 1200]}
+      sizes="(min-width: 800px) 720px, 100vw"
+    />
+    <p>{article.excerpt}</p>
+    <p>
+      העמוד הזה שומר מקום במבנה האתר. אין כאן הסבר על מוצר, המלצה, או מידע שאפשר להסתמך עליו.
+      המאמר יוחלף כשיהיה טקסט מאושר.
+    </p>
+    <p><a href="/articles/">חזרה למאמרים</a></p>
+  </article>
+</BaseLayout>

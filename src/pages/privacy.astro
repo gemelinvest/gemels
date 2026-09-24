@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const crumbs = [
+  { href: "/", label: "דף הבית" },
+  { href: "/privacy/", label: "מדיניות פרטיות" },
+];
+---
+
+<BaseLayout
+  title="מדיניות פרטיות"
+  description="עמוד מדיניות פרטיות של גמל INS. נוסח המדיניות עדיין לא סופק."
+  breadcrumbs={crumbs}
+>
+  <article class="wrap prose">
+    <h1>מדיניות פרטיות</h1>
+    <p><span class="placeholder-flag">ממתין לנוסח</span></p>
+    <p>
+      נוסח מדיניות הפרטיות עדיין לא נמסר. העמוד הזה אינו מדיניות מחייבת, ואינו מתאר איסוף, שמירה או מסירה של מידע.
+    </p>
+    <p>
+      טופס יצירת הקשר באתר לא שולח כרגע את הפרטים לשרת. אין באתר כלי מדידה של גוגל אנליטיקס.
+    </p>
+  </article>
+</BaseLayout>

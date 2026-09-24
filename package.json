@@ -1,0 +1,23 @@
+{
+  "name": "gemel-ins-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "prebuild": "node scripts/og.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "node scripts/check-built.mjs",
+    "check:visual": "node scripts/visual-check.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "@fontsource/heebo": "^5.2.8",
+    "astro": "^5.14.1",
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "playwright": "^1.63.0"
+  }
+}
