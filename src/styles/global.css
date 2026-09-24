@@ -455,8 +455,8 @@ h3 {
 .hero__media img {
   position: absolute;
   inset-block: 0;
-  left: -26%;
-  width: 138%;
+  left: -34%;
+  width: 150%;
   max-width: none;
   height: 100%;
   object-fit: cover;
@@ -473,8 +473,15 @@ h3 {
 }
 
 .hero__copy {
-  max-width: 36rem;
-  margin-inline-start: auto;
+  width: min(24rem, calc(100% - 2.5rem));
+  max-width: 24rem;
+  margin-inline-start: max(1.25rem, calc((100% - min(var(--container), calc(100% - 2rem))) / 2));
+  margin-inline-end: auto;
+  text-align: right;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 3.6vw, 3.4rem);
 }
 
 .hero h1,
@@ -1162,8 +1169,9 @@ h3 {
   }
 
   .hero__copy {
-    margin-inline: 0;
+    width: min(var(--container), calc(100% - 1.5rem));
     max-width: none;
+    margin-inline: auto;
     padding-bottom: 0.5rem;
   }
 
