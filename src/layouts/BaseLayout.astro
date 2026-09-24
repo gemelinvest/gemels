@@ -27,6 +27,7 @@ const graph: Record<string, unknown>[] = [
     name: brand.name,
     alternateName: brand.latinName,
     url: Astro.site?.href,
+    logo: new URL("/brand/logo.png", Astro.site).href,
     telephone: phone.display,
     contactPoint: {
       "@type": "ContactPoint",
@@ -72,7 +73,7 @@ const structuredData = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
     <meta name="robots" content="index,follow" />
-    <meta name="theme-color" content="#1f4f46" />
+    <meta name="theme-color" content="#0c1c3c" />
     <meta property="og:locale" content="he_IL" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={brand.name} />
@@ -84,7 +85,7 @@ const structuredData = {
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage.href} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/brand/favicon.png" type="image/png" />
     {
       import.meta.env.PUBLIC_GSC_VERIFICATION && (
         <meta name="google-site-verification" content={import.meta.env.PUBLIC_GSC_VERIFICATION} />

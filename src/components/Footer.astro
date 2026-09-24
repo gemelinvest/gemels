@@ -6,7 +6,9 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <p class="footer-brand">{brand.name}</p>
+      <a class="footer-logo" href="/" aria-label={`${brand.name}, דף הבית`}>
+        <img src="/brand/logo.png" width="554" height="302" alt="" />
+      </a>
       <p class="footer-note">שירות לקוחות: <a href={phone.href}>{phone.display}</a></p>
       <p class="footer-note">הטקסטים באתר זמניים עד לאישור הניסוח הסופי.</p>
     </div>

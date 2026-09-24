@@ -97,7 +97,7 @@ export const phone = {
 
 `public/og.jpg` נוצרת אוטומטית מתמונת ה-Hero ב-`scripts/og.mjs`.
 
-ה-favicon הזמני הוא `public/favicon.svg`. זה סימן טאבים, לא לוגו רשמי. לא נמצא לוגו מאושר של גמל INS, ולכן שם המותג מוצג בטיפוגרפיה.
+הלוגו הרשמי נמצא ב-`public/brand/logo.png` ומופיע בכותרת ובתחתית. אייקון הטאב הוא `public/brand/favicon.png`. הצבעים באתר נגזרים מהלוגו: כחול כהה וזהב.
 
 ## מידע שעדיין חסר
 
