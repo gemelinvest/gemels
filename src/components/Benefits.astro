@@ -5,15 +5,13 @@ import { benefits } from "../data/site";
 <section class="section section--white" aria-labelledby="benefits-title">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">{benefits.eyebrow}</p>
       <h2 id="benefits-title">{benefits.title}</h2>
       <p class="lede">{benefits.note}</p>
     </div>
     <div class="benefit-grid">
       {
-        benefits.items.map((item, index) => (
+        benefits.items.map((item) => (
           <article class="benefit">
-            <span class="benefit__index">{String(index + 1).padStart(2, "0")}</span>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
           </article>
