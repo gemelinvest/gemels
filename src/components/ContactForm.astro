@@ -13,7 +13,6 @@ import { contactTopics, phone } from "../data/site";
       </p>
     </div>
     <form class="form" id="contact-form" novalidate>
-      <p class="form-status" id="form-status" data-state="idle" role="status" aria-live="polite" hidden></p>
       <div class="form__row">
         <div class="field">
           <label for="full-name">שם מלא</label>
@@ -52,6 +51,7 @@ import { contactTopics, phone } from "../data/site";
         <p><a href="/privacy/">למדיניות הפרטיות</a></p>
         <p class="field__error" id="privacy-error"></p>
       </div>
+      <p class="form-status" id="form-status" data-state="idle" role="status" aria-live="polite" hidden></p>
       <button class="btn btn--primary" type="submit">שליחת הפנייה</button>
     </form>
   </div>
@@ -123,6 +123,8 @@ import { contactTopics, phone } from "../data/site";
     }
 
     status.hidden = false;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    status.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
     if (!ok) {
       status.dataset.state = "error";
       status.textContent = "יש שדות שצריך לתקן לפני שאפשר להמשיך.";
