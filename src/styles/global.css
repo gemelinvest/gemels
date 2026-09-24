@@ -432,12 +432,10 @@ h3 {
 .hero {
   position: relative;
   isolation: isolate;
-  display: flex;
-  align-items: center;
   min-height: clamp(34rem, 78vh, 46rem);
-  padding-block: clamp(3rem, 8vh, 5.5rem);
   overflow: hidden;
   color: #fff;
+  background: #0c1c3c;
 }
 
 .hero__media {
@@ -455,8 +453,8 @@ h3 {
 .hero__media img {
   position: absolute;
   inset-block: 0;
-  left: -34%;
-  width: 150%;
+  left: -72%;
+  width: 148%;
   max-width: none;
   height: 100%;
   object-fit: cover;
@@ -473,10 +471,13 @@ h3 {
 }
 
 .hero__copy {
-  width: min(24rem, calc(100% - 2.5rem));
-  max-width: 24rem;
-  margin-inline-start: max(1.25rem, calc((100% - min(var(--container), calc(100% - 2rem))) / 2));
-  margin-inline-end: auto;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  inset-inline-start: max(1.5rem, calc((100% - min(var(--container), calc(100% - 2rem))) / 2));
+  transform: translateY(-50%);
+  width: min(22rem, 36vw);
+  margin: 0;
   text-align: right;
 }
 
@@ -512,6 +513,7 @@ h3 {
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 0.75rem;
   margin-top: 1.6rem;
 }
@@ -1165,19 +1167,19 @@ h3 {
 @media (max-width: 700px) {
   .hero {
     min-height: 92vh;
-    align-items: flex-end;
   }
 
   .hero__copy {
-    width: min(var(--container), calc(100% - 1.5rem));
-    max-width: none;
-    margin-inline: auto;
-    padding-bottom: 0.5rem;
+    top: auto;
+    bottom: 1.25rem;
+    inset-inline: 0.75rem;
+    transform: none;
+    width: auto;
   }
 
   .hero__media img {
-    left: -42%;
-    width: 170%;
+    left: -48%;
+    width: 175%;
   }
 
   .hero::after {
