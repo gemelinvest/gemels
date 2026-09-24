@@ -1,5 +1,5 @@
 import type { ImageMetadata } from "astro";
-import heroImage from "../assets/hero-family-living-room.png";
+import heroImage from "../assets/hero-family-tablet.png";
 import familyImage from "../assets/family-kitchen-morning.png";
 import aboutImage from "../assets/about-window-parent-child.png";
 import articleTable from "../assets/article-quiet-table.png";
@@ -50,7 +50,7 @@ export type MenuGroup = {
 };
 
 function topic(id: string, title: string, text: string) {
-  return { id, title, text, href: withBase(`/#${id}`) };
+  return { id, title, text, href: withBase("/#services") };
 }
 
 export const menuGroups: MenuGroup[] = [
@@ -131,7 +131,7 @@ export const services: {
   {
     id: "insurance",
     title: "ביטוחים וכיסויים",
-    summary: "דירה, בריאות, חיים ורכב. קודם בודקים כפילות, ורק אחר כך מוסיפים כיסוי.",
+    summary: "דירה, בריאות, חיים ורכב. הפירוט של כל כיסוי נמצא בתפריט.",
     icon: "insurance",
   },
   {
@@ -155,7 +155,7 @@ export const hero = {
   primaryCta: { href: withBase("/#contact"), label: "צור קשר" },
   secondaryCta: { href: withBase("/#services"), label: "לעוד מידע" },
   image: heroImage,
-  imageAlt: "משפחה צעירה, הורים ושני ילדים, יושבים יחד על ספה בסלון מואר",
+  imageAlt: "הורים ושני ילדים יושבים על ספה מול חלונות גדולים ומסתכלים בטאבלט",
 };
 
 export const about = {
@@ -163,8 +163,8 @@ export const about = {
   eyebrow: "אודות",
   title: "גמלס, סוכנות בחיפה",
   paragraphs: [
-    "גמלס מלווה משפחות ועסקים קטנים בהחלטות על פנסיה, גמל, השתלמות וביטוח. יושבים על המסמכים שכבר יש, מסמנים מה כפול ומה חסר, ורק אז בוחרים צעד.",
-    "המשרד בבונה אליעזר 9 בחיפה. אפשר להתקשר, או להשאיר פנייה בטופס. הטופס באתר עדיין לא שולח את הפרטים לשרת.",
+    "גמלס יושבת עם המשפחה או עם העסק על המסמכים שכבר קיימים, לפני שמוסיפים מוצר חדש.",
+    "השיחה מתחילה ממה שיש בבית, לא מרשימת מוצרים.",
   ],
   cta: { href: withBase("/#contact"), label: "דברו איתנו" },
   image: aboutImage,
@@ -174,7 +174,7 @@ export const about = {
 export const family = {
   eyebrow: "משפחה ועתיד",
   title: "ביטחון שמתחיל בבית",
-  text: "פנסיה, ביטוח דירה וחיסכון לילדים הם החלטות של הבית, לא של מוצר בודד. בגמלס מתחילים מהשאלה מה המשפחה צריכה לשמור, ומה אפשר לפשט.",
+  text: "ההחלטות נשארות של הבית, גם כשהמסמכים מגיעים מכמה מקומות.",
   cta: { href: withBase("/#contact"), label: "צור קשר" },
   image: familyImage,
   imageAlt: "משפחה צעירה יושבת סביב שולחן אוכל במטבח מואר",
@@ -198,8 +198,8 @@ export const benefits = {
       text: "לפני שמוסיפים פוליסה, בודקים אם הכיסוי כבר נמצא במקום אחר.",
     },
     {
-      title: "כתובת אחת",
-      text: "טלפון, כתובת בחיפה וטופס באתר. המייל באתר זמני עד לעדכון.",
+      title: "מסמכים במקום אחד",
+      text: "הדוחות נשארים באותה שיחה, ולא מתפזרים בין כמה פניות.",
     },
   ],
 };
@@ -255,7 +255,7 @@ export const articles: {
     paragraphs: [
       "ביטוח דירה נשען על שני סכומים: שווי המבנה ושווי התכולה. סכום מבנה שלא עודכן אחרי שיפוץ, וסכום תכולה שנשאר מהדירה הקודמת, משאירים פער ביום נזק.",
       "לצד זה בודקים אחריות כלפי צד שלישי, נזקי מים, ורעידת אדמה אם היא בכלל כלולה. לא כל הרחבה שמופיעה בהצעה זולה שווה את המחיר, ולא כל ויתור חוסך כסף כשהנזק מגיע.",
-      "אם יש משכנתא, ביטוח המבנה צריך לעמוד גם בדרישת הבנק. זה לא תחליף לביטוח חיים למשכנתא, וזה לא אותו כיסוי.",
+      "אם יש משכנתא, ביטוח המבנה צריך לעמוד גם בדרישת הבנק.",
       "לפני חידוש מביאים את הפוליסה הקיימת ואת כתובת הדירה. בגמלס משווים את הכיסוי למה שיש בבית עכשיו, לא לשאלון של לפני שלוש שנים.",
     ],
   },
@@ -302,12 +302,12 @@ export const ctas = {
   primary: {
     eyebrow: "שיחת היכרות",
     title: "רוצים להבין מה מתאים לכם?",
-    text: "אפשר להתקשר לגמלס, או להשאיר פרטים. נחזור אחרי שהטופס יחובר לשרת. עד אז השיחה הטלפונית היא הדרך השלמה.",
+    text: "שיחה קצרה מספיקה כדי להבין מאיפה להתחיל.",
   },
   closing: {
     eyebrow: "גמלס",
     title: "נשמח לשמוע מכם",
-    text: "המשרד בבונה אליעזר 9, חיפה. אפשר להתקשר עכשיו. הטופס באתר עדיין לא שולח את הפנייה.",
+    text: "אפשר להתקשר, או לרדת לטופס.",
   },
 };
 
