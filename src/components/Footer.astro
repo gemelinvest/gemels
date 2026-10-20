@@ -9,7 +9,7 @@ const year = new Date().getFullYear();
       <a class="footer-logo" href={withBase("/")} aria-label={`${brand.name}, דף הבית`}>
         <img src={withBase("/brand/logo.png")} width="1699" height="926" alt="" />
       </a>
-      <p class="footer-note">שירות לקוחות: <a href={phone.href}>{phone.display}</a></p>
+      <p class="footer-note">שירות לקוחות: <a class="phone-num" dir="ltr" href={phone.href}>{phone.display}</a></p>
       <p class="footer-note">{office.street}, {office.city}</p>
       <p class="footer-note">
         <a href={email.href}>{email.display}</a>

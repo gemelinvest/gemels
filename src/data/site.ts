@@ -17,9 +17,9 @@ export const phone = {
 } as const;
 
 export const email = {
-  display: "info@gemels.co.il",
-  href: "mailto:info@gemels.co.il",
-  temporary: true,
+  display: "gemels@i-s-f.co.il",
+  href: "mailto:gemels@i-s-f.co.il",
+  temporary: false,
 } as const;
 
 export const office = {
@@ -171,9 +171,9 @@ export const about = {
 };
 
 export const family = {
-  eyebrow: "משפחה ועתיד",
-  title: "ביטחון שמתחיל בבית",
-  text: "ההחלטות נשארות של הבית, גם כשהמסמכים מגיעים מכמה מקומות.",
+  eyebrow: "",
+  title: "השקט הפיננסי שלך מתחיל כאן",
+  text: "לדעת שיש אנשי מקצוע מהטובים ביותר שמטפלים לך בביטוחים ובתביעות.",
   cta: { href: withBase("/#contact"), label: "צור קשר" },
   image: familyImage,
   imageAlt: "זוג יושב בפגישה מול נציג, עם מחשב ומסמכים על השולחן",
@@ -299,8 +299,8 @@ export const contactTopics = [
 
 export const ctas = {
   primary: {
-    eyebrow: "שיחת היכרות",
-    title: "רוצים להבין מה מתאים לכם?",
+    eyebrow: "",
+    title: "רוצים בדיקת תיק ביטוחי חינם מהמומחים שלנו?",
     text: "שיחה קצרה מספיקה כדי להבין מאיפה להתחיל.",
   },
   closing: {

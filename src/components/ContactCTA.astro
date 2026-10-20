@@ -14,13 +14,13 @@ const { id, eyebrow, title, text } = Astro.props;
 <section class="section cta-band" aria-labelledby={id}>
   <div class="wrap cta-band__inner">
     <div>
-      <p class="eyebrow">{eyebrow}</p>
+      {eyebrow ? <p class="eyebrow">{eyebrow}</p> : null}
       <h2 id={id}>{title}</h2>
       <p>{text}</p>
     </div>
     <div class="cta-band__actions">
       <a class="btn btn--light" href={withBase("/#contact")}>צור קשר</a>
-      <a class="btn btn--line" href={phone.href}>התקשרו עכשיו {phone.display}</a>
+      <a class="btn btn--line" href={phone.href}>התקשרו עכשיו <span class="phone-num" dir="ltr">{phone.display}</span></a>
     </div>
   </div>
 </section>

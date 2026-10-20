@@ -12,9 +12,9 @@ const { asPage = false } = Astro.props;
 <section class="section section--white" id="articles" aria-labelledby={asPage ? "page-title" : "articles-title"}>
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">מאמרים ומידע</p>
-      {asPage ? null : <h2 id="articles-title">לקרוא לפני השיחה</h2>}
-      <p class="lede">הסברים קצרים על פנסיה, גמל וביטוח. זה מידע כללי, לא ייעוץ אישי.</p>
+      <p class="eyebrow">מידע</p>
+      {asPage ? null : <h2 id="articles-title">מה שחשוב לדעת</h2>}
+      <p class="lede">דברים שחשוב לדעת</p>
     </div>
     <div class="article-grid">
       {
