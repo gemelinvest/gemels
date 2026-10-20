@@ -1164,7 +1164,7 @@ h3 {
   .nav-details > .nav-panel {
     width: 100%;
     justify-content: center;
-    gap: 3.15rem;
+    gap: 3.85rem;
   }
 
   :root {
@@ -1199,7 +1199,7 @@ h3 {
     display: flex;
     flex: 1 1 auto;
     justify-content: center;
-    gap: 3.15rem;
+    gap: 3.85rem;
   }
 
   .menu-drop {
@@ -1241,7 +1241,7 @@ h3 {
     width: 100%;
     min-width: 0;
     justify-content: center;
-    gap: 3.4rem;
+    gap: 4.15rem;
   }
 
   .brand {
