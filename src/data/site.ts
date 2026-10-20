@@ -150,7 +150,7 @@ export const services: {
 export const hero = {
   eyebrow: "גמלס",
   title: "העתיד שלך, בידיים טובות",
-  subtitle: "ליווי פנסיוני, ביטוחי וחיסכון למשפחה ולעסק, מהמשרד בחיפה",
+  subtitle: "הבית החדש לביטוחים שלך",
   primaryCta: { href: withBase("/#contact"), label: "צור קשר" },
   secondaryCta: { href: withBase("/#services"), label: "לעוד מידע" },
   image: heroImage,

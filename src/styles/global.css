@@ -1060,32 +1060,33 @@ h3 {
   z-index: 45;
   left: 1rem;
   bottom: 1.25rem;
-  width: min(17.5rem, calc(100vw - 2rem));
-  padding: 0.85rem 1rem 1rem;
-  border-radius: 18px 18px 18px 6px;
+  width: min(13.5rem, calc(100vw - 2rem));
+  padding: 0.7rem 0.95rem 0.75rem;
+  border-radius: 1.6rem;
   background: var(--pine-deep);
   color: #fff;
   border: 1.5px solid var(--gold);
-  box-shadow: 0 14px 32px rgba(12, 28, 60, 0.28);
+  box-shadow: 0 10px 24px rgba(12, 28, 60, 0.22);
   pointer-events: none;
 }
 
 .promo-bubble::before {
   content: "";
   display: block;
-  width: 2.4rem;
-  height: 3px;
-  margin-bottom: 0.55rem;
+  width: 1.7rem;
+  height: 2px;
+  margin-bottom: 0.4rem;
   border-radius: 99px;
   background: var(--gold);
 }
 
 .promo-bubble__text {
   margin: 0;
-  min-height: 4.6em;
+  min-height: 3.5em;
   color: #fff;
+  font-size: 0.86rem;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
