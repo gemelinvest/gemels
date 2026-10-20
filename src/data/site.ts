@@ -1,8 +1,8 @@
 import type { ImageMetadata } from "astro";
 import heroImage from "../assets/hero-family-tablet.png";
-import familyImage from "../assets/family-kitchen-morning.png";
+import familyImage from "../assets/family-meeting.png";
 import aboutImage from "../assets/about-window-parent-child.png";
-import articleTable from "../assets/article-quiet-table.png";
+import articlePension from "../assets/article-pension-report.png";
 import articleBalcony from "../assets/article-balcony-plants.png";
 import articleTea from "../assets/article-hands-tea.png";
 
@@ -36,7 +36,6 @@ export const brand = {
 
 export const nav = [
   { href: withBase("/"), label: "דף הבית" },
-  { href: withBase("/#about"), label: "אודות" },
   { href: withBase("/#services"), label: "שירותים" },
   { href: withBase("/articles/"), label: "מאמרים" },
   { href: withBase("/#contact"), label: "צור קשר" },
@@ -177,7 +176,7 @@ export const family = {
   text: "ההחלטות נשארות של הבית, גם כשהמסמכים מגיעים מכמה מקומות.",
   cta: { href: withBase("/#contact"), label: "צור קשר" },
   image: familyImage,
-  imageAlt: "משפחה צעירה יושבת סביב שולחן אוכל במטבח מואר",
+  imageAlt: "זוג יושב בפגישה מול נציג, עם מחשב ומסמכים על השולחן",
 };
 
 export const benefits = {
@@ -220,8 +219,8 @@ export const articles: {
     excerpt: "חמישה מספרים שכדאי לסמן בדוח השנתי, לפני שמחליטים אם להזיז מסלול.",
     date: "2026-09-12",
     dateLabel: "12 בספטמבר 2026",
-    image: articleTable,
-    imageAlt: "שולחן עץ עם מחברת סגורה, כוס וצמח, באור יום",
+    image: articlePension,
+    imageAlt: "גבר יושב בסלון ומעיין בדוח פנסיה, ולצדו מחשב נייד",
     paragraphs: [
       "דוח שנתי של קרן פנסיה נראה עמוס, אבל רוב ההחלטה יושבת על כמה שורות. מתחילים ביתרה הצבורה, בדמי הניהול מההפקדה ומהצבירה, ובמסלול ההשקעה שרשום על שמכם.",
       "אחר כך בודקים אם ההפקדה של המעסיק ושלכם הגיעה בחודשים האחרונים, ואם יש כיסוי לנכות ולשארים. כיסוי שלא מסומן לא נעלם מעצמו, והוא גם לא נשאר לתמיד בלי המשך הפקדות.",

@@ -15,7 +15,7 @@ function isCurrent(href: string) {
 <header class="site-header">
   <div class="wrap site-header__bar">
     <a class="brand" href={home} aria-label={`${brand.name}, דף הבית`}>
-      <img src={withBase("/brand/logo.png")} width="554" height="302" alt="" />
+      <img src={withBase("/brand/logo.png")} width="1699" height="926" alt="" />
     </a>
 
     <details class="nav-details" open>
@@ -56,13 +56,10 @@ function isCurrent(href: string) {
     </details>
 
     <div class="header-actions">
-      <a class="phone-link phone-link--text" href={phone.href}>{phone.display}</a>
-      <a class="phone-link phone-link--icon" href={phone.href} aria-label={`התקשרות ${phone.display}`}>
-        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
-          <path d="M7 3.8h3.2l1.2 3-2 1.2a12.5 12.5 0 0 0 6.6 6.6l1.2-2 3 1.2V17a2 2 0 0 1-2.2 2A15.2 15.2 0 0 1 5 6a2 2 0 0 1 2-2.2Z" />
-        </svg>
+      <a class="btn btn--primary header-call" href={phone.href}>
+        <span>חייגו עכשיו</span>
+        <span class="header-call__num">{phone.display}</span>
       </a>
-      <a class="btn btn--primary" href={withBase("/#contact")}>צור קשר</a>
     </div>
   </div>
 </header>

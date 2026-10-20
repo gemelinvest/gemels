@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
   <div class="wrap footer-grid">
     <div>
       <a class="footer-logo" href={withBase("/")} aria-label={`${brand.name}, דף הבית`}>
-        <img src={withBase("/brand/logo.png")} width="554" height="302" alt="" />
+        <img src={withBase("/brand/logo.png")} width="1699" height="926" alt="" />
       </a>
       <p class="footer-note">שירות לקוחות: <a href={phone.href}>{phone.display}</a></p>
       <p class="footer-note">{office.street}, {office.city}</p>
@@ -30,12 +30,7 @@ const year = new Date().getFullYear();
     </nav>
     <section aria-labelledby="regulatory-heading">
       <h2 id="regulatory-heading">מידע רגולטורי</h2>
-      <div class="regulatory">
-        <p><strong>{office.name}</strong></p>
-        <p>ח.פ. {office.hp}</p>
-        <p>{office.street}, {office.city}</p>
-        <p>מספר רישיון לא נמסר עדיין, ולכן הוא לא מופיע כאן.</p>
-      </div>
+      <div class="regulatory"></div>
     </section>
   </div>
   <div class="wrap footer-base">

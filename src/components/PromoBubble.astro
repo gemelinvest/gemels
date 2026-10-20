@@ -1,0 +1,23 @@
+---
+const lines = [
+  "מעל 100 אלף לקוחות מרוצים מהשירות הטוב ביותר",
+  "בדיקה מקצועית לתיק הביטוח",
+  "טיפול מהיר בתביעות",
+];
+---
+
+<aside class="promo-bubble" aria-label="הודעות גמלס">
+  <p class="promo-bubble__text" aria-live="polite">{lines[0]}</p>
+</aside>
+
+<script define:vars={{ lines }}>
+  const text = document.querySelector(".promo-bubble__text");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (text instanceof HTMLElement && !reduce) {
+    let index = 0;
+    window.setInterval(() => {
+      index = (index + 1) % lines.length;
+      text.textContent = lines[index];
+    }, 4500);
+  }
+</script>
