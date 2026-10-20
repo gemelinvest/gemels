@@ -28,7 +28,9 @@ function isCurrent(href: string) {
       <nav class="nav-panel" aria-label="ניווט ראשי">
         <a href={home} aria-current={isCurrent(home) ? "page" : undefined}>דף הבית</a>
         {
-          menuGroups.map((group) => (
+          menuGroups
+            .filter((group) => group.label !== "ביטוח עסקים")
+            .map((group) => (
             <details class="menu-drop">
               <summary class="menu-summary">{group.label}</summary>
               <div class="mega">
@@ -45,7 +47,7 @@ function isCurrent(href: string) {
         }
         {
           plainLinks
-            .filter((item) => item.href !== home)
+            .filter((item) => item.href !== home && item.label !== "צור קשר")
             .map((item) => (
               <a href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined}>
                 {item.label}
