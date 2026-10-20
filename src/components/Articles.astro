@@ -12,7 +12,6 @@ const { asPage = false } = Astro.props;
 <section class="section section--white" id="articles" aria-labelledby={asPage ? "page-title" : "articles-title"}>
   <div class="wrap">
     <div class="section-head">
-      {asPage ? <p class="eyebrow">מידע</p> : null}
       {asPage ? null : <h2 id="articles-title">מה שחשוב לדעת</h2>}
       <p class="lede">דברים שחשוב לדעת</p>
     </div>

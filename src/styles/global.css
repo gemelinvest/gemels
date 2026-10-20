@@ -784,13 +784,19 @@ h3 {
 }
 
 .cta-band {
+  position: relative;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 10% 0%, rgba(255, 252, 248, 0.08), transparent 32%),
+    radial-gradient(circle at 0% 112%, rgba(200, 152, 48, 0.5) 0 11rem, transparent 11.05rem),
+    radial-gradient(circle at 100% -6%, rgba(200, 152, 48, 0.38) 0 7.2rem, transparent 7.25rem),
+    radial-gradient(circle at 58% 128%, rgba(200, 152, 48, 0.34) 0 6.2rem, transparent 6.25rem),
     var(--pine-deep);
   color: var(--white);
 }
 
 .cta-band__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -1157,7 +1163,7 @@ h3 {
   .nav-details > .nav-panel {
     width: 100%;
     justify-content: center;
-    gap: 1.65rem;
+    gap: 2.35rem;
   }
 
   :root {
@@ -1192,7 +1198,7 @@ h3 {
     display: flex;
     flex: 1 1 auto;
     justify-content: center;
-    gap: 1.65rem;
+    gap: 2.35rem;
   }
 
   .menu-drop {
@@ -1234,7 +1240,7 @@ h3 {
     width: 100%;
     min-width: 0;
     justify-content: center;
-    gap: 1.75rem;
+    gap: 2.55rem;
   }
 
   .brand {
