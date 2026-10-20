@@ -257,6 +257,13 @@ h3 {
   backdrop-filter: blur(10px);
 }
 
+.site-header .site-header__bar {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0.2rem;
+}
+
 .site-header__bar {
   min-height: var(--header);
   display: flex;
@@ -269,7 +276,7 @@ h3 {
   align-items: center;
   text-decoration: none;
   line-height: 0;
-  margin-inline-start: -1.35rem;
+  margin-inline-start: -0.3rem;
 }
 
 .brand img {
@@ -1123,6 +1130,11 @@ h3 {
   .site-header__bar {
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-actions {
+    margin-inline-start: auto;
   }
 
   .nav-details {
@@ -1136,8 +1148,8 @@ h3 {
 
   .nav-details > .nav-panel {
     width: 100%;
-    justify-content: center;
-    gap: 1.15rem;
+    justify-content: space-evenly;
+    gap: 2rem;
   }
 
   :root {
@@ -1171,8 +1183,8 @@ h3 {
   .nav-details > .nav-panel {
     display: flex;
     flex: 1 1 auto;
-    justify-content: space-between;
-    gap: 0.75rem;
+    justify-content: space-evenly;
+    gap: 2rem;
   }
 
   .menu-drop {
@@ -1213,12 +1225,12 @@ h3 {
     flex: 1 1 0;
     width: 100%;
     min-width: 0;
-    justify-content: center;
-    gap: 1.35rem;
+    justify-content: space-evenly;
+    gap: clamp(1.75rem, 3vw, 3.4rem);
   }
 
   .brand {
-    margin-inline-start: -2.6rem;
+    margin-inline-start: -0.55rem;
     justify-self: start;
   }
 
@@ -1230,7 +1242,7 @@ h3 {
 
   .header-actions {
     justify-self: end;
-    margin-inline-end: -2rem;
+    margin-inline-end: 0;
   }
 }
 
@@ -1418,7 +1430,7 @@ h3 {
   }
 
   .brand {
-    margin-inline-start: -0.35rem;
+    margin-inline-start: -0.3rem;
   }
 }
 

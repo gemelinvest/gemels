@@ -6,7 +6,7 @@ import { benefits } from "../data/site";
   <div class="wrap">
     <div class="section-head">
       <h2 id="benefits-title">{benefits.title}</h2>
-      <p class="lede">{benefits.note}</p>
+      {benefits.note ? <p class="lede">{benefits.note}</p> : null}
     </div>
     <div class="benefit-grid">
       {

@@ -182,7 +182,7 @@ export const family = {
 export const benefits = {
   eyebrow: "הגישה",
   title: "איך עובדים בגמלס",
-  note: "הסבר על אופן העבודה. אין כאן הבטחת תשואה או תוצאה.",
+  note: "",
   items: [
     {
       title: "קודם התמונה המלאה",
