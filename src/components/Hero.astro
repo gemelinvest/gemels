@@ -1,6 +1,6 @@
 ---
 import { Picture } from "astro:assets";
-import { hero, phone } from "../data/site";
+import { hero } from "../data/site";
 ---
 
 <section class="hero" aria-labelledby="hero-title">
@@ -22,9 +22,5 @@ import { hero, phone } from "../data/site";
       <a class="btn btn--primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
       <a class="btn btn--ghost" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
     </div>
-    <p class="hero__phone">
-      או התקשרו לשירות לקוחות:
-      <a class="phone-num" dir="ltr" href={phone.href}>{phone.display}</a>
-    </p>
   </div>
 </section>

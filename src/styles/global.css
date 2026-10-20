@@ -465,18 +465,20 @@ h3 {
   -webkit-mask-image: linear-gradient(
     to left,
     transparent 0%,
-    rgba(0, 0, 0, 0.18) 14%,
-    rgba(0, 0, 0, 0.45) 28%,
-    rgba(0, 0, 0, 0.72) 42%,
-    #000 58%
+    rgba(0, 0, 0, 0.12) 10%,
+    rgba(0, 0, 0, 0.34) 22%,
+    rgba(0, 0, 0, 0.58) 34%,
+    rgba(0, 0, 0, 0.82) 46%,
+    #000 62%
   );
   mask-image: linear-gradient(
     to left,
     transparent 0%,
-    rgba(0, 0, 0, 0.18) 14%,
-    rgba(0, 0, 0, 0.45) 28%,
-    rgba(0, 0, 0, 0.72) 42%,
-    #000 58%
+    rgba(0, 0, 0, 0.12) 10%,
+    rgba(0, 0, 0, 0.34) 22%,
+    rgba(0, 0, 0, 0.58) 34%,
+    rgba(0, 0, 0, 0.82) 46%,
+    #000 62%
   );
 }
 
@@ -491,12 +493,12 @@ h3 {
   top: 0;
   bottom: 0;
   right: auto;
-  width: 100%;
+  width: 148%;
   max-width: none;
   height: 100%;
   left: 0;
   object-fit: cover;
-  object-position: center center;
+  object-position: 12% center;
 }
 
 .hero::after {
@@ -1226,6 +1228,29 @@ h3 {
 }
 
 @media (max-width: 1023px) {
+  .hero__copy {
+    top: auto;
+    bottom: 1.35rem;
+    inset-inline: 1rem;
+    transform: none;
+    width: auto;
+  }
+
+  .hero__media {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero__media img {
+    left: 0;
+    width: 100%;
+    object-position: center 30%;
+  }
+
+  .hero::after {
+    background: linear-gradient(to top, rgba(12, 28, 60, 0.9) 0%, rgba(12, 28, 60, 0.55) 36%, rgba(12, 28, 60, 0.08) 68%);
+  }
+
   .nav-details {
     margin-inline: 0;
   }
@@ -1324,7 +1349,7 @@ h3 {
 
   .hero__copy {
     top: auto;
-    bottom: 1.25rem;
+    bottom: 1.8rem;
     inset-inline: 0.75rem;
     transform: none;
     width: auto;
@@ -1338,7 +1363,12 @@ h3 {
   .hero__media img {
     left: 0;
     width: 100%;
-    object-position: center 35%;
+    object-position: center 28%;
+  }
+
+  .hero__actions .btn {
+    min-height: 44px;
+    padding-inline: 0.85rem;
   }
 
   .hero__copy {
@@ -1392,33 +1422,14 @@ h3 {
 
   .hero__copy {
     inset-inline-start: clamp(2rem, 4vw, 4.5rem);
-    width: min(30rem, 34vw);
+    width: min(20rem, 26vw);
   }
 
   .hero__media img {
-    width: 100%;
+    width: 152%;
     left: 0;
     right: auto;
-    object-position: center center;
-  }
-
-  .hero__media {
-    -webkit-mask-image: linear-gradient(
-      to left,
-      transparent 0%,
-      rgba(0, 0, 0, 0.22) 11%,
-      rgba(0, 0, 0, 0.55) 22%,
-      rgba(0, 0, 0, 0.84) 33%,
-      #000 46%
-    );
-    mask-image: linear-gradient(
-      to left,
-      transparent 0%,
-      rgba(0, 0, 0, 0.22) 11%,
-      rgba(0, 0, 0, 0.55) 22%,
-      rgba(0, 0, 0, 0.84) 33%,
-      #000 46%
-    );
+    object-position: 10% center;
   }
 }
 
