@@ -29,7 +29,9 @@ const crumbs = [
       sizes="(min-width: 800px) 720px, 100vw"
     />
     {article.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-    <p>הכתוב כאן הוא הסבר כללי של גמלס. הוא אינו ייעוץ אישי, אינו הצעה, ואינו הבטחת תשואה.</p>
+    {article.slug === "insurance-claim" ? null : (
+      <p>הכתוב כאן הוא הסבר כללי של גמלס. הוא אינו ייעוץ אישי, אינו הצעה, ואינו הבטחת תשואה.</p>
+    )}
     <p><a href={withBase("/articles/")}>חזרה למאמרים</a></p>
   </article>
 </BaseLayout>
