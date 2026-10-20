@@ -58,8 +58,7 @@ function isCurrent(href: string) {
     </details>
 
     <div class="header-actions">
-      <a class="btn btn--primary header-call" href={phone.href}>
-        <span>חייגו עכשיו</span>
+      <a class="btn btn--primary header-call" href={phone.href} aria-label={`חייגו ${phone.display}`}>
         <span class="header-call__num phone-num" dir="ltr">{phone.display}</span>
       </a>
     </div>

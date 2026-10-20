@@ -432,9 +432,10 @@ h3 {
 }
 
 .header-call__num {
-  color: #e2c48a;
+  color: #fff;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
 }
 
 .phone-num {
@@ -1163,7 +1164,7 @@ h3 {
   .nav-details > .nav-panel {
     width: 100%;
     justify-content: center;
-    gap: 2.35rem;
+    gap: 3.15rem;
   }
 
   :root {
@@ -1198,7 +1199,7 @@ h3 {
     display: flex;
     flex: 1 1 auto;
     justify-content: center;
-    gap: 2.35rem;
+    gap: 3.15rem;
   }
 
   .menu-drop {
@@ -1240,7 +1241,7 @@ h3 {
     width: 100%;
     min-width: 0;
     justify-content: center;
-    gap: 2.55rem;
+    gap: 3.4rem;
   }
 
   .brand {
