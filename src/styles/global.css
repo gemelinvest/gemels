@@ -142,6 +142,14 @@ h3 {
   background: var(--gold);
 }
 
+.services-kicker {
+  margin: 0 0 0.55rem;
+  color: var(--brass);
+  font-weight: 700;
+  font-size: clamp(1.45rem, 2.4vw, 1.85rem);
+  line-height: 1.2;
+}
+
 .lede {
   color: var(--ink-soft);
   font-size: 1.12rem;
@@ -261,7 +269,7 @@ h3 {
   width: 100%;
   max-width: none;
   margin-inline: 0;
-  padding-inline: 0.2rem;
+  padding-inline: 0.95rem;
 }
 
 .site-header__bar {
@@ -276,7 +284,7 @@ h3 {
   align-items: center;
   text-decoration: none;
   line-height: 0;
-  margin-inline-start: -0.3rem;
+  margin-inline-start: 0;
 }
 
 .brand img {
@@ -1148,8 +1156,8 @@ h3 {
 
   .nav-details > .nav-panel {
     width: 100%;
-    justify-content: space-evenly;
-    gap: 2rem;
+    justify-content: center;
+    gap: 1.65rem;
   }
 
   :root {
@@ -1183,8 +1191,8 @@ h3 {
   .nav-details > .nav-panel {
     display: flex;
     flex: 1 1 auto;
-    justify-content: space-evenly;
-    gap: 2rem;
+    justify-content: center;
+    gap: 1.65rem;
   }
 
   .menu-drop {
@@ -1225,12 +1233,12 @@ h3 {
     flex: 1 1 0;
     width: 100%;
     min-width: 0;
-    justify-content: space-evenly;
-    gap: clamp(1.75rem, 3vw, 3.4rem);
+    justify-content: center;
+    gap: 1.75rem;
   }
 
   .brand {
-    margin-inline-start: -0.55rem;
+    margin-inline-start: 0;
     justify-self: start;
   }
 
@@ -1430,7 +1438,7 @@ h3 {
   }
 
   .brand {
-    margin-inline-start: -0.3rem;
+    margin-inline-start: 0;
   }
 }
 
