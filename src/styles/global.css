@@ -1337,6 +1337,37 @@ h3 {
   :root {
     --container: 1240px;
   }
+
+  .hero__copy {
+    inset-inline-start: clamp(2rem, 4vw, 4.5rem);
+    width: min(30rem, 34vw);
+  }
+
+  .hero__media img {
+    width: 100%;
+    left: 0;
+    right: auto;
+    object-position: center center;
+  }
+
+  .hero__media {
+    -webkit-mask-image: linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.22) 11%,
+      rgba(0, 0, 0, 0.55) 22%,
+      rgba(0, 0, 0, 0.84) 33%,
+      #000 46%
+    );
+    mask-image: linear-gradient(
+      to left,
+      transparent 0%,
+      rgba(0, 0, 0, 0.22) 11%,
+      rgba(0, 0, 0, 0.55) 22%,
+      rgba(0, 0, 0, 0.84) 33%,
+      #000 46%
+    );
+  }
 }
 
 @media (min-width: 1920px) {
