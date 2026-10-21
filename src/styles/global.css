@@ -338,6 +338,11 @@ h3 {
   box-shadow: inset 0 -2px 0 var(--brass);
 }
 
+.nav-panel a.nav-home[aria-current="page"] {
+  color: var(--ink);
+  box-shadow: none;
+}
+
 .menu-drop {
   position: relative;
 }

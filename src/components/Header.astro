@@ -27,7 +27,7 @@ function isCurrent(href: string) {
         }
       </script>
       <nav class="nav-panel" aria-label="ניווט ראשי">
-        <a href={home} aria-current={isCurrent(home) ? "page" : undefined}>דף הבית</a>
+        <a class="nav-home" href={home} aria-current={isCurrent(home) ? "page" : undefined}>דף הבית</a>
         {
           menuGroups
             .filter((group) => group.label !== "ביטוח עסקים")
