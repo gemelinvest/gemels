@@ -432,6 +432,8 @@ h3 {
 }
 
 .header-call__num {
+  display: inline-flex;
+  align-items: center;
   color: #fff;
   font-weight: 800;
   font-size: 1.2rem;
@@ -441,6 +443,9 @@ h3 {
 .header-call__star {
   color: #c89830;
   margin-inline-end: 0.32rem;
+  font-size: 1.38em;
+  line-height: 1;
+  transform: translateY(0.12em);
 }
 
 .phone-num {
@@ -486,20 +491,18 @@ h3 {
   -webkit-mask-image: linear-gradient(
     to left,
     transparent 0%,
-    rgba(0, 0, 0, 0.05) 18%,
-    rgba(0, 0, 0, 0.2) 30%,
-    rgba(0, 0, 0, 0.46) 42%,
-    rgba(0, 0, 0, 0.72) 52%,
-    #000 64%
+    rgba(0, 0, 0, 0.22) 10%,
+    rgba(0, 0, 0, 0.58) 18%,
+    rgba(0, 0, 0, 0.88) 26%,
+    #000 34%
   );
   mask-image: linear-gradient(
     to left,
     transparent 0%,
-    rgba(0, 0, 0, 0.05) 18%,
-    rgba(0, 0, 0, 0.2) 30%,
-    rgba(0, 0, 0, 0.46) 42%,
-    rgba(0, 0, 0, 0.72) 52%,
-    #000 64%
+    rgba(0, 0, 0, 0.22) 10%,
+    rgba(0, 0, 0, 0.58) 18%,
+    rgba(0, 0, 0, 0.88) 26%,
+    #000 34%
   );
 }
 
@@ -529,11 +532,11 @@ h3 {
   z-index: -1;
   background: linear-gradient(
     to left,
-    rgba(12, 28, 60, 0.98) 0%,
-    rgba(12, 28, 60, 0.86) 18%,
-    rgba(12, 28, 60, 0.55) 32%,
-    rgba(12, 28, 60, 0.22) 46%,
-    rgba(12, 28, 60, 0) 60%
+    rgba(12, 28, 60, 0.96) 0%,
+    rgba(12, 28, 60, 0.72) 12%,
+    rgba(12, 28, 60, 0.28) 20%,
+    rgba(12, 28, 60, 0.06) 28%,
+    rgba(12, 28, 60, 0) 36%
   );
 }
 
@@ -823,9 +826,14 @@ h3 {
 }
 
 .contact-kicker {
+  display: block;
   font-size: clamp(1.55rem, 2.5vw, 2.05rem);
   font-weight: 800;
   letter-spacing: 0.01em;
+}
+
+.contact-kicker::before {
+  content: none;
 }
 
 .contact-grid {
@@ -1048,7 +1056,7 @@ h3 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  grid-template-columns: 1.3fr 1fr 1fr;
   gap: 1.5rem 2rem;
 }
 
