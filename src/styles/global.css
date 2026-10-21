@@ -534,12 +534,12 @@ h3 {
   top: 0;
   bottom: 0;
   right: auto;
-  width: 162%;
+  width: 100%;
   max-width: none;
   height: 100%;
-  left: -50%;
+  left: 0;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 32%;
 }
 
 .hero::after {
@@ -1323,7 +1323,7 @@ h3 {
   .hero__media img {
     left: 0;
     width: 100%;
-    object-position: 68% 30%;
+    object-position: center 28%;
   }
 
   .hero::after {
@@ -1442,7 +1442,7 @@ h3 {
   .hero__media img {
     left: 0;
     width: 100%;
-    object-position: 68% 28%;
+    object-position: center 24%;
   }
 
   .hero__actions .btn {

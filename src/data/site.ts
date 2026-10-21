@@ -1,5 +1,5 @@
 import type { ImageMetadata } from "astro";
-import heroImage from "../assets/hero-family-tablet.png";
+import heroImage from "../assets/hero-family-sofa.png";
 import familyImage from "../assets/family-meeting.png";
 import aboutImage from "../assets/about-window-parent-child.png";
 import articlePension from "../assets/article-pension-report.png";
@@ -154,7 +154,7 @@ export const hero = {
   primaryCta: { href: withBase("/#contact"), label: "צור קשר" },
   secondaryCta: { href: withBase("/#services"), label: "לעוד מידע" },
   image: heroImage,
-  imageAlt: "הורים ושני ילדים יושבים על ספה מול חלונות גדולים ומסתכלים בטאבלט",
+  imageAlt: "משפחה של ארבעה יושבת על ספה בסלון ומרימה ידיים",
 };
 
 export const about = {
