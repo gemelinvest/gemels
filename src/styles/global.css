@@ -640,14 +640,24 @@ h3 {
   min-width: 0;
 }
 
-.card--link {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+.service-grid .card--link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.9rem;
+  row-gap: 0.3rem;
+  align-items: center;
   height: 100%;
   text-decoration: none;
   color: inherit;
   transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.service-grid .card--link .icon-badge {
+  grid-row: 1 / span 2;
+}
+
+.service-grid .card--link h3 {
+  margin: 0;
 }
 
 .card--link:hover {
