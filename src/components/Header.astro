@@ -79,12 +79,15 @@ function isCurrent(href: string) {
   const digits = document.querySelectorAll(".header-call__digit");
   if (digits.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     let index = 0;
-    const mark = () => {
-      digits.forEach((digit, place) => digit.classList.toggle("is-on", place === index));
+    const pop = () => {
+      const digit = digits[index];
+      digit.classList.remove("is-pop");
+      void digit.offsetWidth;
+      digit.classList.add("is-pop");
       index = (index + 1) % digits.length;
     };
-    mark();
-    window.setInterval(mark, 5000);
+    pop();
+    window.setInterval(pop, 2000);
   }
 
   const panel = document.querySelector(".nav-panel");

@@ -461,8 +461,19 @@ h3 {
   transform: translateY(0.15em);
 }
 
-.header-call__digit.is-on {
-  color: #c89830;
+.header-call__digit {
+  display: inline-block;
+  transform-origin: center center;
+}
+
+.header-call__digit.is-pop {
+  animation: digit-pop 0.45s ease;
+}
+
+@keyframes digit-pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
 
 .phone-num {
@@ -539,7 +550,7 @@ h3 {
   height: 100%;
   left: 0;
   object-fit: cover;
-  object-position: center 32%;
+  object-position: center top;
 }
 
 .hero::after {
@@ -1323,7 +1334,7 @@ h3 {
   .hero__media img {
     left: 0;
     width: 100%;
-    object-position: center 28%;
+    object-position: center top;
   }
 
   .hero::after {
@@ -1442,7 +1453,7 @@ h3 {
   .hero__media img {
     left: 0;
     width: 100%;
-    object-position: center 24%;
+    object-position: center top;
   }
 
   .hero__actions .btn {
