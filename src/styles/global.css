@@ -284,7 +284,7 @@ h3 {
   align-items: center;
   text-decoration: none;
   line-height: 0;
-  margin-inline-start: 0;
+  margin-inline-start: 0.45rem;
 }
 
 .brand img {
@@ -438,6 +438,11 @@ h3 {
   letter-spacing: 0.03em;
 }
 
+.header-call__star {
+  color: #c89830;
+  margin-inline-end: 0.32rem;
+}
+
 .phone-num {
   direction: ltr;
   unicode-bidi: isolate;
@@ -481,22 +486,20 @@ h3 {
   -webkit-mask-image: linear-gradient(
     to left,
     transparent 0%,
-    rgba(0, 0, 0, 0.12) 8%,
-    rgba(0, 0, 0, 0.34) 16%,
-    rgba(0, 0, 0, 0.58) 26%,
-    rgba(0, 0, 0, 0.8) 36%,
-    rgba(0, 0, 0, 0.94) 48%,
-    #000 60%
+    rgba(0, 0, 0, 0.05) 18%,
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0.46) 42%,
+    rgba(0, 0, 0, 0.72) 52%,
+    #000 64%
   );
   mask-image: linear-gradient(
     to left,
     transparent 0%,
-    rgba(0, 0, 0, 0.12) 8%,
-    rgba(0, 0, 0, 0.34) 16%,
-    rgba(0, 0, 0, 0.58) 26%,
-    rgba(0, 0, 0, 0.8) 36%,
-    rgba(0, 0, 0, 0.94) 48%,
-    #000 60%
+    rgba(0, 0, 0, 0.05) 18%,
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0.46) 42%,
+    rgba(0, 0, 0, 0.72) 52%,
+    #000 64%
   );
 }
 
@@ -511,10 +514,10 @@ h3 {
   top: 0;
   bottom: 0;
   right: auto;
-  width: 150%;
+  width: 162%;
   max-width: none;
   height: 100%;
-  left: -58%;
+  left: -50%;
   object-fit: cover;
   object-position: center center;
 }
@@ -526,11 +529,11 @@ h3 {
   z-index: -1;
   background: linear-gradient(
     to left,
-    rgba(12, 28, 60, 0.94) 0%,
-    rgba(12, 28, 60, 0.62) 10%,
-    rgba(12, 28, 60, 0.28) 20%,
-    rgba(12, 28, 60, 0.08) 32%,
-    rgba(12, 28, 60, 0) 46%
+    rgba(12, 28, 60, 0.98) 0%,
+    rgba(12, 28, 60, 0.86) 18%,
+    rgba(12, 28, 60, 0.55) 32%,
+    rgba(12, 28, 60, 0.22) 46%,
+    rgba(12, 28, 60, 0) 60%
   );
 }
 
@@ -1090,6 +1093,19 @@ h3 {
   font-size: 0.92rem;
 }
 
+.footer-rights {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.footer-rights__mark {
+  font-size: 1.05em;
+  line-height: 1;
+}
+
 .regulatory {
   min-height: 0;
 }
@@ -1164,7 +1180,7 @@ h3 {
   .nav-details > .nav-panel {
     width: 100%;
     justify-content: center;
-    gap: 3.85rem;
+    gap: 4.55rem;
   }
 
   :root {
@@ -1199,7 +1215,7 @@ h3 {
     display: flex;
     flex: 1 1 auto;
     justify-content: center;
-    gap: 3.85rem;
+    gap: 4.55rem;
   }
 
   .menu-drop {
@@ -1241,11 +1257,11 @@ h3 {
     width: 100%;
     min-width: 0;
     justify-content: center;
-    gap: 4.15rem;
+    gap: 4.9rem;
   }
 
   .brand {
-    margin-inline-start: 0;
+    margin-inline-start: 0.9rem;
     justify-self: start;
   }
 
@@ -1445,7 +1461,7 @@ h3 {
   }
 
   .brand {
-    margin-inline-start: 0;
+    margin-inline-start: 0.35rem;
   }
 }
 

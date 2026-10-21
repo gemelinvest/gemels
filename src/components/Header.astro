@@ -1,6 +1,7 @@
 ---
 import { brand, menuGroups, nav, phone, withBase } from "../data/site";
 
+const phoneDigits = phone.display.replace(/^\*/, "");
 const path = Astro.url.pathname;
 const home = withBase("/");
 const plainLinks = nav.filter((item) => item.label !== "שירותים");
@@ -59,7 +60,7 @@ function isCurrent(href: string) {
 
     <div class="header-actions">
       <a class="btn btn--primary header-call" href={phone.href} aria-label={`חייגו ${phone.display}`}>
-        <span class="header-call__num phone-num" dir="ltr">{phone.display}</span>
+        <span class="header-call__num phone-num" dir="ltr"><span class="header-call__star">*</span>{phoneDigits}</span>
       </a>
     </div>
   </div>

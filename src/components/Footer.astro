@@ -1,6 +1,5 @@
 ---
 import { brand, email, legalNav, nav, office, phone, withBase } from "../data/site";
-const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
@@ -34,6 +33,6 @@ const year = new Date().getFullYear();
     </section>
   </div>
   <div class="wrap footer-base">
-    <p>© {year} {brand.name} · זכויות שמורות לבעלי האתר</p>
+    <p class="footer-rights"><span>זכויות שמורות</span><span class="footer-rights__mark">©</span><span dir="ltr">ONYEXONYX Technology Systems</span></p>
   </div>
 </footer>
