@@ -60,7 +60,7 @@ function isCurrent(href: string) {
 
     <div class="header-actions">
       <a class="btn btn--primary header-call" href={phone.href} aria-label={`חייגו ${phone.display}`}>
-        <span class="header-call__num phone-num" dir="ltr"><span class="header-call__star">*</span>{phoneDigits}</span>
+        <span class="header-call__num phone-num" dir="ltr"><span class="header-call__star" aria-hidden="true">*</span>{phoneDigits.split("").map((digit) => <span class="header-call__digit">{digit}</span>)}</span>
       </a>
     </div>
   </div>
@@ -75,6 +75,17 @@ function isCurrent(href: string) {
     else navDetails.open = false;
   };
   desktopNav.addEventListener("change", syncNav);
+
+  const digits = document.querySelectorAll(".header-call__digit");
+  if (digits.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let index = 0;
+    const mark = () => {
+      digits.forEach((digit, place) => digit.classList.toggle("is-on", place === index));
+      index = (index + 1) % digits.length;
+    };
+    mark();
+    window.setInterval(mark, 5000);
+  }
 
   const panel = document.querySelector(".nav-panel");
   panel?.addEventListener(

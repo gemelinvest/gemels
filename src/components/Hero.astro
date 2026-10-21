@@ -1,6 +1,11 @@
 ---
 import { Picture } from "astro:assets";
 import { hero } from "../data/site";
+
+const goldWord = "טובות";
+const goldAt = hero.title.lastIndexOf(goldWord);
+const titleLead = goldAt === -1 ? hero.title : hero.title.slice(0, goldAt);
+const titleGold = goldAt === -1 ? "" : goldWord;
 ---
 
 <section class="hero" aria-labelledby="hero-title">
@@ -16,7 +21,7 @@ import { hero } from "../data/site";
     />
   </div>
   <div class="hero__copy">
-    <h1 id="hero-title">{hero.title}</h1>
+    <h1 id="hero-title">{titleLead}{titleGold ? <span class="hero__gold">{titleGold}</span> : null}</h1>
     <p class="lede">{hero.subtitle}</p>
     <div class="hero__actions">
       <a class="btn btn--primary" href={hero.primaryCta.href}>{hero.primaryCta.label}</a>
