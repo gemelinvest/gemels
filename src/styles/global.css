@@ -329,6 +329,7 @@ h3 {
   text-decoration: none;
   color: var(--ink);
   font-weight: 500;
+  font-size: 1.35rem;
   padding: 0.4rem 0;
   white-space: nowrap;
 }
@@ -356,6 +357,7 @@ h3 {
   list-style: none;
   cursor: pointer;
   font-weight: 500;
+  font-size: 1.35rem;
   color: var(--ink);
   white-space: nowrap;
 }
